@@ -54,7 +54,7 @@ if(req.body.name != null && req.body.name != "" && req.body.id == null)
       return;
     }
     });
-    /*
+    
     if(result.length == 1){
  //     var curVals = result[0];
       mysql.pool.query("UPDATE workouts SET name=?, reps=?, weight=?, date=?, lbs=? WHERE id=? ",
@@ -65,12 +65,12 @@ if(req.body.name != null && req.body.name != "" && req.body.id == null)
           next(err);
           return;
         }
-        res.render('home',context);
+    //    res.render('home',context);
       
       });
     }
     });
-  */
+  
 });
 
 
