@@ -36,11 +36,11 @@ app.all('/',function(req,res,next){
  
   });
   
+  var function hello(){
+    console.log("Hello!");
+  }
   
-  var hbs = handlebars.create({
-    
-  });
-  
+  hello();
   
   });
 
