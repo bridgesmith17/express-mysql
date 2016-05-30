@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 
 
 
-app.post('/',function(req,res,next){
+app.get('/',function(req,res,next){
 
   var context = {};
   mysql.pool.query('SELECT * FROM workouts', function(err, rows, fields){
