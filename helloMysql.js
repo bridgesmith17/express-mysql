@@ -28,18 +28,13 @@ app.all('/',function(req,res,next){
   
   });
   
-document.getElementById('newWorkout').addEventListener('click', function(event){
+  document.getElementById('newWorkout').addEventListener('click', function(event){
+
     event.preventDefault();
   });
-
-
-
+  
 /*
-
-
-
-
-    var qParams = [];
+  var qParams = [];
   for (var p in req.query){
   qParams.push({'name':p,'value':req.query[p]})
   }
@@ -51,8 +46,9 @@ document.getElementById('newWorkout').addEventListener('click', function(event){
       return;
     }
   });
+
   });
-  event.preventDefault();
+
 
 
 app.get('/insert',function(req,res,next){
