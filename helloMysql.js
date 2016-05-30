@@ -80,7 +80,7 @@ app.all('/update',function(req,res,next){
       return;
     }
     context.info = result;
-  res.render('update');
+  res.render('update', context);
 });
 });
 
