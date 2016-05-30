@@ -28,7 +28,7 @@ app.all('/',function(req,res,next){
   
   });
   
-    /*  
+      
     var qParams = [];
   for (var p in req.query){
   qParams.push({'name':p,'value':req.query[p]})
@@ -40,7 +40,7 @@ app.all('/',function(req,res,next){
       return;
     }
   });
- */
+ 
   
   });
 
