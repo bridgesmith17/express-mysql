@@ -59,7 +59,7 @@ app.post('/update',function(req,res,next){
       next(err);
       return;
     }
-
+  context.info = result;
   res.render('update', context);
 });
 });
