@@ -28,13 +28,13 @@ app.all('/',function(req,res,next){
 
   });
 });
-/*  
+  
     var qParams = [];
   for (var p in req.query){
   qParams.push({'name':p,'value':req.query[p]})
   }
   
-  var context = {};
+//  var context = {};
   mysql.pool.query("INSERT INTO workouts (`name`,`reps`, `weight`, `date`, `lbs`) VALUES (?,?,?,?,?)", [req.body.name, req.body.reps, req.body.weight, req.body.date, req.body.lbs], function(err, result){
     if(err){
       next(err);
