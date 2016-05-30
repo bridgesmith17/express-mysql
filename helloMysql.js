@@ -21,12 +21,13 @@ app.all('/',function(req,res,next){
       next(err);
       return;
     }  
-    context.results = JSON.stringify(rows);
+//    context.results = JSON.stringify(rows);
     
-    for (var i = 0; i < rows.length; i++) {
-  console.log(rows[i].name);
+  for (var i = 0; i < rows.length; i++) {
+      console.log(rows[i].name);
 };
-    res.render('home', context);
+    res.render('home');
+  //  res.render('home', context);
   });
     var qParams = [];
   for (var p in req.query){
