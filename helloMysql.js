@@ -60,6 +60,7 @@ app.post('/update',function(req,res,next){
       return;
     }
   context.info = result;
+  console.log(result);
   res.render('update', context);
 });
 });
