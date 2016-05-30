@@ -27,6 +27,8 @@ app.get('/',function(req,res,next){
     res.render('home', context);
   });
 });
+});
+
 /*
 app.get('/insert',function(req,res,next){
     
