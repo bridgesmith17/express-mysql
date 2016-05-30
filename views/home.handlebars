@@ -41,12 +41,12 @@
         <th> Lbs (True) or Kgs(false) </th>
     </thead>
     <tbody>
-        <tr>
-        <td>{{name}}</td>
-        <td>{{reps}}</td>
-        <td>{{weight}}</td>
-        <td>{{date}}</td>
-        <td>{{lbs}}</td>
+        <tr> {{#each results}}
+        <td>{{this.name}}</td>
+        <td>{{this.reps}}</td>
+        <td>{{ths.weight}}</td>
+        <td>{{this.date}}</td>
+        <td>{{this.lbs}}</td>
         </tr>
     </tbody>
 </table>
