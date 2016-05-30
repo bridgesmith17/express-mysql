@@ -36,9 +36,7 @@ app.all('/',function(req,res,next){
  
   });
   
-  var hey = function hello(){
-    console.log("Hello!");
-  }
+function functionOne() { alert('You clicked the top text'); }
   
   
   
