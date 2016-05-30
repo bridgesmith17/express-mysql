@@ -37,14 +37,12 @@ app.all('/',function(req,res,next){
     }
   });
   
-for(var i = 1; i < 4; i++){
+
 newRow = document.createElement("tr");
-	for(var j = 1; j < 5; j++){
-  	var newEle = document.createElement("td");
-		newEle.textContent = j +"," + i;
-			
-			newRow.appendChild(newEle);
-  }
+var newEle = document.createElement("td");
+newEle.textContent = "test";
+newRow.appendChild(newEle);
+
 newBody.appendChild(newRow);
 }
   
