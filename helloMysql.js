@@ -21,7 +21,7 @@ app.all('/',function(req,res,next){
       next(err);
       return;
     }  
-    context.results = JSON.Parse(rows);
+    context.results = JSON.parse(rows);
     
     
     
