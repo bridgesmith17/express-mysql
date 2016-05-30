@@ -40,7 +40,7 @@ app.all('/',function(req,res,next){
     console.log("Hello!");
   }
   
-  hey;
+  
   
   });
 
