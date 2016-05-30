@@ -23,6 +23,12 @@ app.get('/',function(req,res,next){
 });
 
 app.get('/insert',function(req,res,next){
+    
+  var qParams = [];
+  for (var p in req.query){
+  qParams.push({'name':p,'value':req.query[p]})
+  }
+  
   var context = {};
   mysql.pool.query("INSERT INTO todo (`name`) VALUES (?)", [req.query.c], function(err, result){
     if(err){
