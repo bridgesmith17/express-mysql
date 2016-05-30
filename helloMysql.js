@@ -45,9 +45,9 @@ newRow = document.createElement("tr");
 var newEle = document.createElement("td");
 newEle.textContent = "test";
 newRow.appendChild(newEle);
-*/
-tableBody.appendChild(newRow);
 
+tableBody.appendChild(newRow);
+*/
   
   
 });
