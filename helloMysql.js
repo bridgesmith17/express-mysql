@@ -20,8 +20,7 @@ app.all('/',function(req,res,next){
     if(err){
       next(err);
       return;
-    }  
-  });
+    } 
     context.results = JSON.stringify(rows);
 
     
@@ -31,6 +30,8 @@ app.all('/',function(req,res,next){
 };
 */
     res.render('home', context);
+  
+  });
   });
 /*  
     var qParams = [];
