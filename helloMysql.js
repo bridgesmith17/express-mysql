@@ -54,7 +54,7 @@ if(req.body.name != null && req.body.name != "" && req.body.id == null)
 
 app.post('/update',function(req,res,next){
   var context = {};
-    mysql.pool.query("SELECT * FROM workouts WHERE id=?", [req.query.updateID], function(err, result){
+    mysql.pool.query("SELECT * FROM workouts WHERE id=?", [req.body.updateID], function(err, result){
     if(err){
       next(err);
       return;
