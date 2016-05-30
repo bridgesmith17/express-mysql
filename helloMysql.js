@@ -21,25 +21,19 @@ app.all('/',function(req,res,next){
     if(err){
       next(err);
       return;
-    } 
-    context.results = rows;
-
-    res.render('home', context);
-  
+    }
+    
   });
-
-  
-
-/*
-document.getElementById('newWorkout').addEventListener('click', function(event){  
-  mysql.pool.query("INSERT INTO workouts (`name`,`reps`, `weight`, `date`, `lbs`) VALUES (?,?,?,?,?)", [req.body.name, req.body.reps, req.body.weight, req.body.date, req.body.lbs], function(err, result){
+    
+    mysql.pool.query("INSERT INTO workouts (`name`,`reps`, `weight`, `date`, `lbs`) VALUES (?,?,?,?,?)", [req.body.name, req.body.reps, req.body.weight, req.body.date, req.body.lbs], function(err, result){
     if(err){
       next(err);
       return;
-    }
+    }  
+    context.results = rows;
+    res.render('home', context);
+  
   });
-
-  }); */
   });
 
 
@@ -50,11 +44,11 @@ app.post('/insert',function(req,res,next){
       next(err);
       return;
     }
-  
-//    context.results = "Inserted id " + result.insertId;
     res.render('test');
   });  
 });
+
+
 /*
 app.get('/delete',function(req,res,next){
   var context = {};
