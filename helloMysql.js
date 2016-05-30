@@ -36,7 +36,7 @@ if(req.body.name != null && req.body.name != "" && req.body.updateID == null)
      context.results = rows;
      
      console.log(context);
-      res.render('home', context);
+     
  
   });
   
@@ -65,11 +65,12 @@ if(req.body.name != null && req.body.name != "" && req.body.updateID == null)
           next(err);
           return;
         }
-        res.render('home')
+      
       
       });
     }
     });
+   res.render('home', context);
   
 });
 
