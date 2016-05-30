@@ -21,7 +21,7 @@ app.get('/',function(req,res,next){
     res.render('home', context);
   });
 });
-/*
+
 app.get('/insert',function(req,res,next){
   var context = {};
   mysql.pool.query("INSERT INTO todo (`name`) VALUES (?)", [req.query.c], function(err, result){
@@ -100,7 +100,7 @@ app.get('/reset-table',function(req,res,next){
     })
   });
 });
-*/
+
 app.use(function(req,res){
   res.status(404);
   res.render('404');
