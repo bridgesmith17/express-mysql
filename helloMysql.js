@@ -19,6 +19,7 @@ app.post('/',function(req,res,next){
       next(err);
       return;
     }
+    });
   var context = {};
   mysql.pool.query('SELECT * FROM workouts', function(err, rows, fields){
     if(err){
