@@ -29,24 +29,20 @@ app.all('/',function(req,res,next){
   });
 
   
-/*
-  var qParams = [];
-  for (var p in req.query){
-  qParams.push({'name':p,'value':req.query[p]})
-  }
 
-  
+
+document.getElementById('newWorkout').addEventListener('click', function(event){  
   mysql.pool.query("INSERT INTO workouts (`name`,`reps`, `weight`, `date`, `lbs`) VALUES (?,?,?,?,?)", [req.body.name, req.body.reps, req.body.weight, req.body.date, req.body.lbs], function(err, result){
     if(err){
       next(err);
       return;
     }
   });
-*/
+
+  });
   });
 
-
-
+/*
 app.post('/insert',function(req,res,next){
     
   mysql.pool.query("INSERT INTO workouts (`name`,`reps`, `weight`, `date`, `lbs`) VALUES (?,?,?,?,?)", [req.body.name, req.body.reps, req.body.weight, req.body.date, req.body.lbs], function(err, result){
@@ -59,7 +55,7 @@ app.post('/insert',function(req,res,next){
     res.render('home',context);
   });  
 });
-/*
+
 app.get('/delete',function(req,res,next){
   var context = {};
   mysql.pool.query("DELETE FROM todo WHERE id=?", [req.query.id], function(err, result){
