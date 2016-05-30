@@ -26,11 +26,8 @@ app.all('/',function(req,res,next){
     
     
     for (var i = 0; i < rows.length; i++) {
-      console.log(rows[i].name);
-      console.log(rows[i].reps);
-      console.log(rows[i].weight);
-      console.log(rows[i].date);
-      console.log(rows[i].lbs);
+      context.results(rows[i].name);
+
 };
 
     res.render('home', context);
