@@ -73,7 +73,7 @@ if(req.body.name != null && req.body.name != "")
 
 
 app.all('/update',function(req,res,next){
-  var context{};
+  var context = {};
     mysql.pool.query("SELECT * FROM todo WHERE id=?", [req.body.updateID], function(err, result){
     if(err){
       next(err);
