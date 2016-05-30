@@ -27,11 +27,7 @@ app.all('/',function(req,res,next){
     res.render('home', context);
   
   });
-  
-  document.getElementById('newWorkout').addEventListener('click', function(event){
 
-    event.preventDefault();
-  });
   
 /*
   var qParams = [];
