@@ -37,10 +37,8 @@ app.all('/',function(req,res,next){
   });
   
   
-  var hbs = Handlebars.create({
-    helpers:{
-      delete: function(){console.log("test");}
-    }
+  var hbs = handlebars.create({
+    
   });
   
   
