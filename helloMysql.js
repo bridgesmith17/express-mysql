@@ -28,12 +28,23 @@ app.all('/',function(req,res,next){
   
   });
   
-/*      
+document.getElementById('newWorkout').addEventListener('click', function(event){
+    event.preventDefault();
+  });
+
+
+
+/*
+
+
+
+
     var qParams = [];
   for (var p in req.query){
   qParams.push({'name':p,'value':req.query[p]})
   }
   */
+  
   mysql.pool.query("INSERT INTO workouts (`name`,`reps`, `weight`, `date`, `lbs`) VALUES (?,?,?,?,?)", [req.body.name, req.body.reps, req.body.weight, req.body.date, req.body.lbs], function(err, result){
     if(err){
       next(err);
@@ -41,6 +52,7 @@ app.all('/',function(req,res,next){
     }
   });
   });
+  event.preventDefault();
 
 
 app.get('/insert',function(req,res,next){
