@@ -35,7 +35,7 @@ app.all('/',function(req,res,next){
     }
      context.results = rows;
      
-     console.log(results);
+     console.log(context);
       res.render('home', context);
  
   });
