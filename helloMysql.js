@@ -37,15 +37,15 @@ app.all('/',function(req,res,next){
     }
   });
   
-/*
+
 newRow = document.createElement("tr");
-var newEle = document.createElement("td");
+/*var newEle = document.createElement("td");
 newEle.textContent = "test";
 newRow.appendChild(newEle);
-
+*/
 newBody.appendChild(newRow);
 
-  */
+  
   
 });
 
