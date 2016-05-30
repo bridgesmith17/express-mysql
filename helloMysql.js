@@ -21,10 +21,10 @@ app.all('/',function(req,res,next){
       next(err);
       return;
     } 
-    context.results = JSON.stringify(rows);
+    context.results = JSON.parse(rows);
 
     
-    
+/*    
     for (var i = 0; i < rows.length; i++) {
       context.name =rows[i].name;
       context.reps =rows[i].reps;
@@ -33,6 +33,7 @@ app.all('/',function(req,res,next){
       context.lbs =rows[i].lbs;
 
 };
+*/
 
     res.render('home', context);
   
