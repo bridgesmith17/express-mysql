@@ -72,7 +72,7 @@ if(req.body.name != null && req.body.name != "")
 });
 
 
-app.all('/update',function(req,res,next){
+app.post('/update',function(req,res,next){
   var context = {};
     mysql.pool.query("SELECT * FROM todo WHERE id=?", [req.body.updateID], function(err, result){
     if(err){
