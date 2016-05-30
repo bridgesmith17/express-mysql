@@ -25,6 +25,8 @@ app.all('/',function(req,res,next){
   });  
   } 
  
+ 
+ 
   var context = {};
   mysql.pool.query('SELECT * FROM workouts', function(err, rows, fields){
     if(err){
@@ -32,12 +34,11 @@ app.all('/',function(req,res,next){
       return;
     }
      context.results = rows;
+     
+     console.log(results);
       res.render('home', context);
  
   });
-  
-function functionOne() { alert('You clicked the top text'); }
-  
   
   
   });
