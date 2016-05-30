@@ -30,7 +30,7 @@ app.all('/',function(req,res,next){
 
   
 
-
+/*
 document.getElementById('newWorkout').addEventListener('click', function(event){  
   mysql.pool.query("INSERT INTO workouts (`name`,`reps`, `weight`, `date`, `lbs`) VALUES (?,?,?,?,?)", [req.body.name, req.body.reps, req.body.weight, req.body.date, req.body.lbs], function(err, result){
     if(err){
@@ -39,10 +39,10 @@ document.getElementById('newWorkout').addEventListener('click', function(event){
     }
   });
 
-  });
+  }); */
   });
 
-/*
+
 app.post('/insert',function(req,res,next){
     
   mysql.pool.query("INSERT INTO workouts (`name`,`reps`, `weight`, `date`, `lbs`) VALUES (?,?,?,?,?)", [req.body.name, req.body.reps, req.body.weight, req.body.date, req.body.lbs], function(err, result){
@@ -52,10 +52,10 @@ app.post('/insert',function(req,res,next){
     }
   
     context.results = "Inserted id " + result.insertId;
-    res.render('home',context);
+    res.render('home');
   });  
 });
-
+/*
 app.get('/delete',function(req,res,next){
   var context = {};
   mysql.pool.query("DELETE FROM todo WHERE id=?", [req.query.id], function(err, result){
