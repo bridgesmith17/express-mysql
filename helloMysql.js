@@ -40,7 +40,7 @@ app.all('/',function(req,res,next){
  
   });
   
-    mysql.pool.query("DELETE FROM workouts WHERE id=?", [req.query.id], function(err, result){
+    mysql.pool.query("DELETE FROM workouts WHERE id=?", [req.body.id], function(err, result){
     if(err){
       next(err);
       return;
