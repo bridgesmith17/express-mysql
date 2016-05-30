@@ -37,19 +37,9 @@ app.all('/',function(req,res,next){
     }
   });
   
-
-var docBody = document.body;
-/*
-
-newRow = document.createElement("tr");
-var newEle = document.createElement("td");
-newEle.textContent = "test";
-newRow.appendChild(newEle);
-
-tableBody.appendChild(newRow);
-*/
-  
-  
+//  for (var i = 0; i < rows.length; i++) {
+//  console.log(rows[i].name);
+//};
 });
 
 /*
