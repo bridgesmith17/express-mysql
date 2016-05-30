@@ -25,7 +25,7 @@ app.all('/',function(req,res,next){
  /*   
     for (var i = 0; i < rows.length; i++) {
   console.log(rows[i].name);
-};*/
+};
 
     res.render('home', context);
   });
