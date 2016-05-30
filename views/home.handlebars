@@ -2,7 +2,7 @@
 function submitForm() {
    // Get the first form with the name
    // Hopefully there is only one, but there are more, select the correct index
-   var frm = document.getElementsByName('exercise-form')[0];
+   var frm = document.getElementsByName('exercise-form');
    frm.submit(); // Submit
    frm.reset();  // Reset
    return false; // Prevent page refresh
