@@ -47,38 +47,34 @@ if(req.body.name != null && req.body.name != "")
     }
   
   });
+    mysql.pool.query("SELECT * FROM todo WHERE id=?", [req.query.updateID], function(err, result){
+    if(err){
+      next(err);
+      return;
+    }
+    if(result.length == 1){
+      var curVals = result[0];
+      mysql.pool.query("UPDATE todo SET name=?, reps=?, weight=? date=? lsb=? WHERE id=? ",
+        [req.body.name || curVals.name, req.body.reps || curVals.reps, req.body.weight || curVals.weight, req.body.date || curVals.date, req.body.lbs || curVals.lbs, req.body.updateID],
+        function(err, result){
+        if(err){
+          next(err);
+          return;
+        }
+        context.results = "Updated " + result.changedRows + " rows.";
+        res.render('home',context);
+      });
+    }
+  });
   
 });
 
 
 
-app.get('/delete',function(req,res,next){
-  var context = {};
-  mysql.pool.query("DELETE FROM workouts WHERE id=?", [req.query.id], function(err, result){
-    if(err){
-      next(err);
-      return;
-    }
-    res.render('test');
-  });
-});
+
+
 
 /*
-///simple-update?id=2&name=The+Task&done=false&due=2015-12-5
-app.get('/simple-update',function(req,res,next){
-  var context = {};
-  mysql.pool.query("UPDATE todo SET name=?, done=?, due=? WHERE id=? ",
-    [req.query.name, req.query.done, req.query.due, req.query.id],
-    function(err, result){
-    if(err){
-      next(err);
-      return;
-    }
-    context.results = "Updated " + result.changedRows + " rows.";
-    res.render('home',context);
-  });
-});
-
 ///safe-update?id=1&name=The+Task&done=false
 app.get('/safe-update',function(req,res,next){
   var context = {};
