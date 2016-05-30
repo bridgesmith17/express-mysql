@@ -10,7 +10,7 @@ app.set('port', 3000);
 
 
 
-app.get('/',function(req,res,next){
+app.post('/',function(req,res,next){
   var context = {};
   mysql.pool.query('SELECT * FROM workouts', function(err, rows, fields){
     if(err){
