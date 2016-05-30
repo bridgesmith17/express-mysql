@@ -27,6 +27,8 @@ app.all('/',function(req,res,next){
     res.render('home', context);
 
   });
+});
+/*  
     var qParams = [];
   for (var p in req.query){
   qParams.push({'name':p,'value':req.query[p]})
