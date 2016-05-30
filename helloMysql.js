@@ -51,7 +51,7 @@ app.post('/insert',function(req,res,next){
       return;
     }
   
-    context.results = "Inserted id " + result.insertId;
+//    context.results = "Inserted id " + result.insertId;
     res.render('test');
   });  
 });
