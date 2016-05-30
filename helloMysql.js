@@ -17,13 +17,19 @@ app.get('/',function(req,res,next){
       next(err);
       return;
     }
+    var context = {};
+    mysql.pool.query("INSERT INTO workouts (`name`,`reps`, `weight`, `date`, `lbs`) VALUES (?,?,?,?,?)", [req.body.name, req.body.reps, req.body.weight, req.body.date, req.body.lbs], function(err, result){
+    if(err){
+      next(err);
+      return;
+    }
     context.results = JSON.stringify(rows);
     res.render('home', context);
   });
 });
-
+/*
 app.get('/insert',function(req,res,next){
-/*    
+    
   var qParams = [];
   for (var p in req.query){
   qParams.push({'name':p,'value':req.query[p]})
@@ -36,8 +42,8 @@ app.get('/insert',function(req,res,next){
       return;
     }
     context.results = "Inserted id " + result.insertId;
-  */  res.render('home',context);
-  });  
+    res.render('home',context);
+  }); */ 
 /*});
 
 app.get('/delete',function(req,res,next){
