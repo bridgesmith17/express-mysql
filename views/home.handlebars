@@ -41,12 +41,9 @@
         <th> Lbs (True) or Kgs(false) </th>
     </thead>
     <tbody>
-        <tr>
-        <td>{{results.0.name}}</td>
-        <td>{{results.0.reps}}</td>
-        <td>{{results.0.weight}}</td>
-        <td>{{results.0.date}}</td>
-        <td>{{results.0.lbs}}</td>
+        <tr>{{#each queryList}}
+    <td>{{this.name}}
+         {{/each}}
         </tr>
     </tbody>
 </table>
