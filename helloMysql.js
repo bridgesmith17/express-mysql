@@ -52,7 +52,7 @@ app.post('/insert',function(req,res,next){
     }
   
     context.results = "Inserted id " + result.insertId;
-    res.render('home');
+    res.render('test');
   });  
 });
 /*
