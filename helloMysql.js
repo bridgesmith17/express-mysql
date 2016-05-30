@@ -37,7 +37,10 @@ app.all('/',function(req,res,next){
   });
   
   
-  handlebars.registerHelper('deleteRow', function(options){
+  var hbs = handlebars.create({
+    helpers:{
+      delete: function(){console.log("test");}
+    }
   });
   
   
