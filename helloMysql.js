@@ -74,13 +74,13 @@ if(req.body.name != null && req.body.name != "")
 
 app.post('/update',function(req,res,next){
   var context = {};
-    mysql.pool.query("SELECT * FROM todo WHERE id=?", [req.body.updateID], function(err, result){
+    mysql.pool.query("SELECT * FROM workouts WHERE id=?", [req.body.updateID], function(err, result){
     if(err){
       next(err);
       return;
     }
     console.log("hello");
-    console.log(req.body.updateID);
+    console.log(result);
     context.info = result;
   res.render('update', context);
 });
