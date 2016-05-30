@@ -1,5 +1,8 @@
 <h1>MySQL Results:</h1>
 <p>{{results}}</p>
+
+<h1>List of Excercises</h1>
+
 <form method="post">
     <p>Name:</p>
     <p><input type="text" name="name"></p>
@@ -26,3 +29,18 @@
       
   </p>
 </form>
+
+<table>
+    <caption> My Excercises </caption>
+    <thead>
+        <th> Name </th>
+        <th> Reps</th>
+        <th> Weight </th>
+        <th> Date (yyyy-mm-dd) </th>
+        <th> Lbs (True) or Kgs(false) </th>
+    </thead>
+    <tbody>
+        <tr>{{results}}</tr>
+    </tbody>
+</table>
+
