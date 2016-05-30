@@ -44,7 +44,7 @@ newEle.textContent = "test";
 newRow.appendChild(newEle);
 
 newBody.appendChild(newRow);
-}
+
   
   
 });
