@@ -79,6 +79,8 @@ app.all('/update',function(req,res,next){
       next(err);
       return;
     }
+    console.log("hello");
+    console.log(result);
     context.info = result;
   res.render('update', context);
 });
