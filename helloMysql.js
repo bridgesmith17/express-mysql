@@ -23,7 +23,7 @@ app.all('/',function(req,res,next){
     } 
     context.results = rows;
     console.log(context);
-    console.log(context.results[0]);
+    console.log(context.results[0].name);
 
     
 /*    
