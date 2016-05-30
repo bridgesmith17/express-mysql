@@ -37,7 +37,7 @@ app.all('/',function(req,res,next){
     }
   });
   
-  var docBody = document.body;
+
   
 var tableBody = document.body.table.tbody
 /*
