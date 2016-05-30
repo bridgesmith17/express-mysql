@@ -35,6 +35,12 @@ app.all('/',function(req,res,next){
       res.render('home', context);
  
   });
+  
+  function deleteRow(tableID,currentRow) {
+  console.log(test);
+
+}
+  
   });
 
 
