@@ -38,8 +38,8 @@ app.all('/',function(req,res,next){
   });
   
 
+var docBody = document.body;
 /*
-var test = document.body.table.tbody;
 
 newRow = document.createElement("tr");
 var newEle = document.createElement("td");
