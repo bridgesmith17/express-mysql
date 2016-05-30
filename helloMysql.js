@@ -37,13 +37,16 @@ app.all('/',function(req,res,next){
     }
   });
   
+  var docBody = document.body;
+  
+var tableBody = document.body.table.tbody
 
 newRow = document.createElement("tr");
 /*var newEle = document.createElement("td");
 newEle.textContent = "test";
 newRow.appendChild(newEle);
 */
-newBody.appendChild(newRow);
+tabbleBody.appendChild(newRow);
 
   
   
