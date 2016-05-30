@@ -55,7 +55,7 @@ if(req.body.name != null && req.body.name != "" && req.body.id == null)
     }
     if(result.length == 1){
       var curVals = result[0];
-      mysql.pool.query("UPDATE workouts SET name=?, reps=?, weight=? date=? lbs=? WHERE id=? ",
+      mysql.pool.query("UPDATE workouts SET name=?, reps=?, weight=?, date=?, lbs=? WHERE id=? ",
         [req.body.name || curVals.name, req.body.reps || curVals.reps, req.body.weight || curVals.weight, req.body.date || curVals.date, req.body.lbs || curVals.lbs, req.body.updateID],
         function(err, result){
         if(err){
