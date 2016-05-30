@@ -1,13 +1,3 @@
-<script> 
-function submitForm() {
-   // Get the first form with the name
-   // Hopefully there is only one, but there are more, select the correct index
-   var frm = document.getElementsByName('exercise-form')[0];
-   frm.submit(); // Submit
-   frm.reset();  // Reset
-   return false; // Prevent page refresh
-}
-</script>
 
 
 
@@ -36,7 +26,7 @@ function submitForm() {
         <option value="false">False</option>
     </select>
   </div>
-  <p><input type="button" value="submit" id="btnsubmit" oneclick="submitForm()">
+  <p><input type="submit" value="submit" name="submit">
       
   </p>
 </form>
