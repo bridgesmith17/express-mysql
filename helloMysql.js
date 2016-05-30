@@ -48,6 +48,25 @@ if(req.body.name != null && req.body.name != "" && req.body.id == null)
   
   });
   
+      mysql.pool.query("SELECT * FROM workouts WHERE id=?", [req.body.updateID], function(err, result){
+    if(err){
+      next(err);
+      return;
+    }
+    if(result.length == 1){
+      var curVals = result[0];
+      mysql.pool.query("UPDATE todo SET name=?, reps=?, weight=? date=? lsb=? WHERE id=? ",
+        [req.body.name || curVals.name, req.body.reps || curVals.reps, req.body.weight || curVals.weight, req.body.date || curVals.date, req.body.lbs || curVals.lbs, req.body.updateID],
+        function(err, result){
+        if(err){
+          next(err);
+          return;
+        }
+        res.render('home',context);
+      
+      });
+
+  
   
 });
 
