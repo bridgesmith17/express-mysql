@@ -22,6 +22,10 @@ app.all('/',function(req,res,next){
       return;
     }  
     context.results = JSON.stringify(rows);
+    
+    for (var i = 0; i < rows.length; i++) {
+  console.log(rows[i].name);
+};
     res.render('home', context);
   });
     var qParams = [];
@@ -37,9 +41,7 @@ app.all('/',function(req,res,next){
     }
   });
   
-//  for (var i = 0; i < rows.length; i++) {
-//  console.log(rows[i].name);
-//};
+
 });
 
 /*
