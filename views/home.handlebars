@@ -2,29 +2,7 @@
 function deleteRow(tableID,currentRow) {
 console.log(currentRow);
 
-/*    try {
-        var table = document.getElementById(tableID);
-//        var rowCount = table.rows.length;
-//        for (var i = 0; i < rowCount; i++) {
-  //          var row = table.rows[i];
-            /*var chkbox = row.cells[0].childNodes[0];*/
-            /*if (null != chkbox && true == chkbox.checked)*/
-            
-//            if (row==currentRow.parentNode.parentNode) {
- //               if (rowCount <= 1) {
-//                    alert("Cannot delete all the rows.");
-   //                 break;
-     //           }
-       ///         table.deleteRow(i);
-           //     rowCount--;
-         //       i--;/*
-/*            }
-        }
-    } catch (e) {
-        alert(e);
-    }
-    getValues();
-*/}
+}
 </script>
 
 
@@ -78,7 +56,11 @@ console.log(currentRow);
             <td>{{this.date}}
             <td>{{this.lbs}}
             <td><input type="button" value="update" />
-            <td><input type="button" value="delete" onclick="deleteRow('dataTable',{{this.id}})"  />
+            <td><form method="post" >
+                        <p><input type="hidden" name="id" value="{{this.id}}"></p>
+                        <p><input type="submit" name="delete"</p>
+                </form>
+                   
         
         </tr> {{/each}}
         
