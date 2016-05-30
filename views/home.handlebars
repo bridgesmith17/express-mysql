@@ -1,7 +1,34 @@
-<script> function functionOne() { alert('You clicked the top text'); }</script>
+<script> 
+function deleteRow(tableID,currentRow) {
+console.log(currenRow);
+
+/*    try {
+        var table = document.getElementById(tableID);
+//        var rowCount = table.rows.length;
+//        for (var i = 0; i < rowCount; i++) {
+  //          var row = table.rows[i];
+            /*var chkbox = row.cells[0].childNodes[0];*/
+            /*if (null != chkbox && true == chkbox.checked)*/
+            
+//            if (row==currentRow.parentNode.parentNode) {
+ //               if (rowCount <= 1) {
+//                    alert("Cannot delete all the rows.");
+   //                 break;
+     //           }
+       ///         table.deleteRow(i);
+           //     rowCount--;
+         //       i--;/*
+/*            }
+        }
+    } catch (e) {
+        alert(e);
+    }
+    getValues();
+*/}
+</script>
 
 
-<p><a href="#" onClick="functionOne();">Top Text</a></p>
+
 
 <h1>Add New Exercise</h1>
 
@@ -51,7 +78,7 @@
             <td>{{this.date}}
             <td>{{this.lbs}}
             <td><input type="button" value="update" />
-            <td><input type="button" value="delete"  />
+            <td><input type="button" value="delete onclick="deleteRow('dataTable',{{this.id}})""  />
         
         </tr> {{/each}}
         
