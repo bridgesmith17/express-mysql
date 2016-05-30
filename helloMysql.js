@@ -30,7 +30,7 @@ app.get('/insert',function(req,res,next){
   }
   
   var context = {};
-  mysql.pool.query("INSERT INTO todo (`name`) VALUES (run)", function(err, result){
+  mysql.pool.query("INSERT INTO todo (`name`) VALUES (?)", req.query.name, function(err, result){
     if(err){
       next(err);
       return;
