@@ -22,8 +22,16 @@ app.all('/',function(req,res,next){
       next(err);
       return;
     }
-    
+     context.results = rows;
+      res.render('home', context);
+ 
   });
+  if(req.body.name != null)
+  {
+    console.log("yippe");
+  }
+  
+  
   });
 
 
