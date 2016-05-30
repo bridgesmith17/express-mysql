@@ -23,7 +23,7 @@ app.get('/',function(req,res,next){
 });
 
 app.post('/insert',function(req,res,next){
-    
+/*    
   var qParams = [];
   for (var p in req.query){
   qParams.push({'name':p,'value':req.query[p]})
@@ -37,7 +37,7 @@ app.post('/insert',function(req,res,next){
     }
     context.results = "Inserted id " + result.insertId;
     res.render('home',context);
-  });
+  });  */
 });
 /*
 app.get('/delete',function(req,res,next){
