@@ -22,10 +22,10 @@ app.get('/',function(req,res,next){
     if(err){
       next(err);
       return;
-    }
+    }*/
     context.results = JSON.stringify(rows);
     res.render('home', context);
-  */});
+  });
 });
 
 /*
