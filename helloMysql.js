@@ -22,6 +22,11 @@ app.all('/',function(req,res,next){
       return;
     }  
     context.results = JSON.stringify(rows);
+    
+    var tableBody = document.body.table.tbody;
+    
+    
+    
     for (var i = 0; i < rows.length; i++) {
   console.log(rows[i].name);
 };
