@@ -69,10 +69,10 @@ if(req.body.name != null && req.body.name != "" && req.body.updateID == null)
      context.results = rows;
      
      console.log(context);
-     
+     res.render('home', context);
  
   });
-   res.render('home', context);
+   
   
 });
 
