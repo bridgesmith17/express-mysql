@@ -22,6 +22,10 @@ app.all('/',function(req,res,next){
       return;
     }  
     context.results = JSON.stringify(rows);
+                var req = new XMLHttpRequest();
+//                req.open("GET", "http://api.openweathermap.org/data/2.5/weather?q=Corvallis,or&appid=fa7d80c48643dfadde2cced1b1be6ca1", false);
+              req.send(null);
+            console.log(JSON.parse(req.responseText)
     res.render('home', context);
   });
     var qParams = [];
