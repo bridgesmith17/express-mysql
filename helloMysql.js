@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 
 
 app.all('/',function(req,res,next){
-  
+/*  
   if(req.body.name != null && req.body.name != "")
   {
     mysql.pool.query("INSERT INTO workouts (`name`,`reps`, `weight`, `date`, `lbs`) VALUES (?,?,?,?,?)", [req.body.name, req.body.reps, req.body.weight, req.body.date, req.body.lbs], function(err, result){
@@ -24,7 +24,7 @@ app.all('/',function(req,res,next){
     }
   });  
   } 
- 
+ */
  
  
   var context = {};
