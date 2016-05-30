@@ -47,6 +47,7 @@ if(req.body.name != null && req.body.name != "")
     }
   
   });
+  /*
     mysql.pool.query("SELECT * FROM todo WHERE id=?", [req.query.updateID], function(err, result){
     if(err){
       next(err);
@@ -66,6 +67,7 @@ if(req.body.name != null && req.body.name != "")
       });
     }
   });
+  */
   
 });
 
