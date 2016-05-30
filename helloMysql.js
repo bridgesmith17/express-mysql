@@ -65,7 +65,7 @@ if(req.body.name != null && req.body.name != "" && req.body.updateID == null)
           next(err);
           return;
         }
-    //    res.render('home',context);
+        res.render('home')
       
       });
     }
