@@ -36,11 +36,10 @@ app.all('/',function(req,res,next){
  
   });
   
-  /*
-  handlebars.registerHelper('deleteRow', function(options){
-    console.log(test);
+  
+  Handlebars.registerHelper('deleteRow', function(options){
   });
-  */
+  
   
   });
 
