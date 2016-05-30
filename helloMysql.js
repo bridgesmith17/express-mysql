@@ -36,10 +36,11 @@ app.all('/',function(req,res,next){
  
   });
   
-  function deleteRow(tableID,currentRow) {
-  console.log(test);
-
-}
+  
+  Handlebars.registerHelper("deleteRow", fucntion(){
+      console.log(test);
+  })
+  
   
   });
 
