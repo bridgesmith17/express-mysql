@@ -75,7 +75,7 @@ if(req.body.name != null && req.body.name != "")
 app.all('/test',function(req,res,next){
 
   res.render('test');
-}
+});
 
 
 
