@@ -38,9 +38,9 @@ app.all('/',function(req,res,next){
   });
   
 
-  
-var test = document.body.table.tbody;
 /*
+var test = document.body.table.tbody;
+
 newRow = document.createElement("tr");
 var newEle = document.createElement("td");
 newEle.textContent = "test";
