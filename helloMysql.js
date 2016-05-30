@@ -1,28 +1,30 @@
 var express = require('express');
 var mysql = require('./dbcon.js');
 
+var bodyParser = require('body-parser');
 var app = express();
 var handlebars = require('express-handlebars').create({defaultLayout:'main'});
 
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
 app.set('port', 3000);
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 
 
-app.get('/',function(req,res,next){
+app.post('/',function(req,res,next){
+    mysql.pool.query("INSERT INTO workouts (`name`,`reps`, `weight`, `date`, `lbs`) VALUES (?,?,?,?,?)", [req.body.name, req.body.reps, req.body.weight, req.body.date, req.body.lbs], function(err, result){
+    if(err){
+      next(err);
+      return;
+    }
   var context = {};
   mysql.pool.query('SELECT * FROM workouts', function(err, rows, fields){
     if(err){
       next(err);
       return;
-    } /* 
-    var context = {};
-    mysql.pool.query("INSERT INTO workouts (`name`,`reps`, `weight`, `date`, `lbs`) VALUES (?,?,?,?,?)", [req.body.name, req.body.reps, req.body.weight, req.body.date, req.body.lbs], function(err, result){
-    if(err){
-      next(err);
-      return;
-    }*/
+    }  
     context.results = JSON.stringify(rows);
     res.render('home', context);
   });
