@@ -24,7 +24,7 @@ app.all('/',function(req,res,next){
 //    context.results = JSON.stringify(rows);
     
   for (var i = 0; i < rows.length; i++) {
-      console.log(rows[i].name);
+      console.log(JSON.stringify(rows));
 };
     res.render('home');
   //  res.render('home', context);
