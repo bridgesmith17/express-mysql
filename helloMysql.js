@@ -80,7 +80,7 @@ app.all('/update',function(req,res,next){
       return;
     }
     console.log("hello");
-    console.log(result);
+    console.log(req.body.updateID);
     context.info = result;
   res.render('update', context);
 });
