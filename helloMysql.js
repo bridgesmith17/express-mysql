@@ -14,7 +14,20 @@ app.use(bodyParser.json());
 
 
 app.all('/',function(req,res,next){
-
+  
+  /*  
+    var qParams = [];
+  for (var p in req.query){
+  qParams.push({'name':p,'value':req.query[p]})
+  }
+  */
+  mysql.pool.query("INSERT INTO workouts (`name`,`reps`, `weight`, `date`, `lbs`) VALUES (?,?,?,?,?)", [req.body.name, req.body.reps, req.body.weight, req.body.date, req.body.lbs], function(err, result){
+    if(err){
+      next(err);
+      return;
+    }
+  });
+  
   var context = {};
   mysql.pool.query('SELECT * FROM workouts', function(err, rows, fields){
     if(err){
@@ -22,39 +35,12 @@ app.all('/',function(req,res,next){
       return;
     } 
     context.results = rows;
-    console.log(context);
-    console.log(context.results[0].name);
-
-    
-/*    
-    for (var i = 0; i < rows.length; i++) {
-      context.name =rows[i].name;
-      context.reps =rows[i].reps;
-      context.weight =rows[i].weight;
-      context.date =rows[i].date;
-      context.lbs =rows[i].lbs;
-
-};
-*/
 
     res.render('home', context);
   
   });
   });
-/*  
-    var qParams = [];
-  for (var p in req.query){
-  qParams.push({'name':p,'value':req.query[p]})
-  }
-  
-  mysql.pool.query("INSERT INTO workouts (`name`,`reps`, `weight`, `date`, `lbs`) VALUES (?,?,?,?,?)", [req.body.name, req.body.reps, req.body.weight, req.body.date, req.body.lbs], function(err, result){
-    if(err){
-      next(err);
-      return;
-    }
-  });
-});
-*/
+
 
 app.get('/insert',function(req,res,next){
     
