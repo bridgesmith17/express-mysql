@@ -15,6 +15,15 @@ app.use(bodyParser.json());
 
 app.all('/',function(req,res,next){
   
+  if(req.body)
+  {
+    mysql.pool.query("INSERT INTO workouts (`name`,`reps`, `weight`, `date`, `lbs`) VALUES (?,?,?,?,?)", [req.body.name, req.body.reps, req.body.weight, req.body.date, req.body.lbs], function(err, result){
+    if(err){
+      next(err);
+      return;
+    }
+  });  
+  } 
  
   var context = {};
   mysql.pool.query('SELECT * FROM workouts', function(err, rows, fields){
@@ -26,18 +35,6 @@ app.all('/',function(req,res,next){
       res.render('home', context);
  
   });
-
-  if(req.body)
-  {
-    mysql.pool.query("INSERT INTO workouts (`name`,`reps`, `weight`, `date`, `lbs`) VALUES (?,?,?,?,?)", [req.body.name, req.body.reps, req.body.weight, req.body.date, req.body.lbs], function(err, result){
-    if(err){
-      next(err);
-      return;
-    }
-  });  
-  }
-  
-  
   });
 
 
