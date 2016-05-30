@@ -47,12 +47,14 @@ if(req.body.name != null && req.body.name != "" && req.body.id == null)
     }
   
   });
-  /*
+  
     mysql.pool.query("SELECT * FROM workouts WHERE id=?", [req.body.updateID], function(err, result){
     if(err){
       next(err);
       return;
     }
+    });
+    /*
     if(result.length == 1){
  //     var curVals = result[0];
       mysql.pool.query("UPDATE workouts SET name=?, reps=?, weight=?, date=?, lbs=? WHERE id=? ",
