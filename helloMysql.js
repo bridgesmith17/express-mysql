@@ -59,20 +59,7 @@ app.post('/update',function(req,res,next){
       next(err);
       return;
     }
-    if(result.length == 1){
-      var curVals = result[0];
-      mysql.pool.query("UPDATE todo SET name=?, reps=?, weight=? date=? lsb=? WHERE id=? ",
-        [req.body.name || curVals.name, req.body.reps || curVals.reps, req.body.weight || curVals.weight, req.body.date || curVals.date, req.body.lbs || curVals.lbs, req.body.updateID],
-        function(err, result){
-        if(err){
-          next(err);
-          return;
-        }
-        res.render('home',context);
-      });
-    }
-  });
-    context.info = result;
+
   res.render('update', context);
 });
 });
