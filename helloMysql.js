@@ -37,7 +37,7 @@ app.all('/',function(req,res,next){
   });
   
   
-  Handlebars.registerHelper("deleteRow", function(){
+  handlebars.registerHelper("deleteRow", function(){
       console.log(test);
   })
   
