@@ -22,12 +22,8 @@ app.all('/',function(req,res,next){
       return;
     }  
     context.results = JSON.stringify(rows);
-    
-
     res.render('home', context);
-
   });
-});
   
     var qParams = [];
   for (var p in req.query){
