@@ -22,6 +22,9 @@ app.all('/',function(req,res,next){
       return;
     }  
     context.results = JSON.stringify(rows);
+    for (var i = 0; i < rows.length; i++) {
+  console.log(rows[i].name);
+};
     res.render('home', context);
   });
   
@@ -30,7 +33,6 @@ app.all('/',function(req,res,next){
   qParams.push({'name':p,'value':req.query[p]})
   }
   
-//  var context = {};
   mysql.pool.query("INSERT INTO workouts (`name`,`reps`, `weight`, `date`, `lbs`) VALUES (?,?,?,?,?)", [req.body.name, req.body.reps, req.body.weight, req.body.date, req.body.lbs], function(err, result){
     if(err){
       next(err);
