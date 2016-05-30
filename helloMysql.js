@@ -82,6 +82,7 @@ app.all('/update',function(req,res,next){
     context.info = result;
   res.render('update');
 });
+});
 
 
 
