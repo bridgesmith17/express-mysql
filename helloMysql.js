@@ -26,7 +26,11 @@ app.all('/',function(req,res,next){
     
     
     for (var i = 0; i < rows.length; i++) {
-      context.results =rows[i].name + " " + rows[i].reps + " " + rows[i].weight + " " + rows[i].date + " " + rows[i].lbs;
+      context.name =rows[i].name;
+      context.reps =rows[i].reps;
+      context.weight =rows[i].weight;
+      context.date =rows[i].date;
+      context.lbs =rows[i].lbs;
 
 };
 
