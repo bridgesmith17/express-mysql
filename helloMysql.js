@@ -36,11 +36,11 @@ app.all('/',function(req,res,next){
  
   });
   
-  function hello(){
+  var hey = function hello(){
     console.log("Hello!");
   }
   
-  hello();
+  hey;
   
   });
 
