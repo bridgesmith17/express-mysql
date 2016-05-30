@@ -34,7 +34,7 @@ app.all('/',function(req,res,next){
   for (var p in req.query){
   qParams.push({'name':p,'value':req.query[p]})
   }
-  */
+
   
   mysql.pool.query("INSERT INTO workouts (`name`,`reps`, `weight`, `date`, `lbs`) VALUES (?,?,?,?,?)", [req.body.name, req.body.reps, req.body.weight, req.body.date, req.body.lbs], function(err, result){
     if(err){
@@ -42,24 +42,19 @@ app.all('/',function(req,res,next){
       return;
     }
   });
-
+*/
   });
 
 
 
-app.get('/insert',function(req,res,next){
+app.post('/insert',function(req,res,next){
     
-  var qParams = [];
-  for (var p in req.query){
-  qParams.push({'name':p,'value':req.query[p]})
-  }
-  
-  var context = {};
-  mysql.pool.query("INSERT INTO workouts (`name`,`reps`, `weight`, `date`, `lbs`) VALUES (?,?,?,?,?)", [req.query.name, req.query.reps, req.query.weight, req.query.date, req.query.lbs], function(err, result){
+  mysql.pool.query("INSERT INTO workouts (`name`,`reps`, `weight`, `date`, `lbs`) VALUES (?,?,?,?,?)", [req.body.name, req.body.reps, req.body.weight, req.body.date, req.body.lbs], function(err, result){
     if(err){
       next(err);
       return;
     }
+  });
     context.results = "Inserted id " + result.insertId;
     res.render('home',context);
   });  
