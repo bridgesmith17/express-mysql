@@ -38,20 +38,19 @@ app.all('/',function(req,res,next){
   });
 
 
-/*
+
 app.get('/delete',function(req,res,next){
   var context = {};
-  mysql.pool.query("DELETE FROM todo WHERE id=?", [req.query.id], function(err, result){
+  mysql.pool.query("DELETE FROM workouts WHERE id=?", [req.query.id], function(err, result){
     if(err){
       next(err);
       return;
     }
-    context.results = "Deleted " + result.changedRows + " rows.";
-    res.render('home',context);
+    res.render('test');
   });
 });
 
-
+/*
 ///simple-update?id=2&name=The+Task&done=false&due=2015-12-5
 app.get('/simple-update',function(req,res,next){
   var context = {};
