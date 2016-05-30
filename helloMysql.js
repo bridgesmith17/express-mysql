@@ -21,9 +21,9 @@ app.all('/',function(req,res,next){
       next(err);
       return;
     }  
-    context.results = JSON.stringify(rows);
+    context.results = JSON.Parse(rows);
     
-    var tableBody = document.body.table.tbody;
+    
     
     
     
