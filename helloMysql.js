@@ -21,7 +21,10 @@ app.all('/',function(req,res,next){
       next(err);
       return;
     }  
+  }
     context.results = JSON.stringify(rows);
+});
+    
  /*   
     for (var i = 0; i < rows.length; i++) {
   console.log(rows[i].name);
