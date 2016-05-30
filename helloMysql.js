@@ -53,7 +53,7 @@ if(req.body.name != null && req.body.name != "" && req.body.id == null)
       next(err);
       return;
     }
-    });
+   
     
     if(result.length == 1){
  //     var curVals = result[0];
