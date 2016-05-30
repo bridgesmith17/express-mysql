@@ -36,7 +36,7 @@ app.all('/',function(req,res,next){
  
   });
   
-  var function hello(){
+  function hello(){
     console.log("Hello!");
   }
   
