@@ -4,9 +4,7 @@
 document.addEventListener('DOMContentLoaded', displayTable);
 document.addEventListener('DOMContentLoaded', bindInsert);
 
-function deleteMe(deleteID){
-  console.log("error check");
-}
+
 
 
 function displayTable(){
@@ -88,8 +86,13 @@ function displayTable(){
          
   }
   
+  function deleteMe(deleteID){
+  console.log("error check");
+  even.preventDefault();
+}
   
-function deleteMe(deleteID){
+  
+//function deleteMe(deleteID){
 document.getElementById(deleteID).addEventListener('click', function(event){
   console.log("made it here");
     var req = new XMLHttpRequest();
@@ -112,7 +115,7 @@ document.getElementById(deleteID).addEventListener('click', function(event){
  
     event.preventDefault();
   });
-}
+//}
   
   
   
