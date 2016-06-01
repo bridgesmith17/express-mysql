@@ -47,6 +47,22 @@ app.get('/select',function(req,res,next){
   });
 });
 
+app.get('/selectNew',function(req,res,next){
+    
+  var context = {};
+  mysql.pool.query('SELECT * FROM workouts ORDER BY id DESC LIMIT 1', function(err, rows, fields){
+    if(err){
+      next(err);
+      return;
+    }
+     context.results = rows;
+    
+     res.type('application/json');
+       res.send( context);
+ 
+  });
+});
+
 app.get('/',function(req,res,next){
     res.render('home');
 });
