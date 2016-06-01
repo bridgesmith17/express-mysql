@@ -122,7 +122,7 @@ app.get('/',function(req,res,next){
   //    res.render('update');
     
   }
-    res.render('home');
+    res.render('update');
 });
 
 
