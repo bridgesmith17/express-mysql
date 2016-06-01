@@ -26,6 +26,28 @@ app.post('/insert',function(req,res,next){
   }
   
 });
+
+app.get('/select',function(req,res,next){
+    
+  var context = {};
+  mysql.pool.query('SELECT * FROM workouts', function(err, rows, fields){
+    if(err){
+      next(err);
+      return;
+    }
+     context.results = rows;
+    
+     res.type('application/json');
+       res.send( context);
+ 
+  });
+});
+
+
+app.get('/',function(req,res,next){
+    res.render('home');
+});
+
   
   /*
    var context = {};
@@ -46,7 +68,7 @@ app.post('/insert',function(req,res,next){
 
 });
 */
-app.get('/select',function(req,res,next){
+
   /*
 if(req.body.name != null && req.body.name != "" && req.body.updateID == null)
   {
@@ -93,24 +115,6 @@ if(req.body.name != null && req.body.name != "" && req.body.updateID == null)
     
 */    
 
-  var context = {};
-  mysql.pool.query('SELECT * FROM workouts', function(err, rows, fields){
-    if(err){
-      next(err);
-      return;
-    }
-     context.results = rows;
-    
-     res.type('application/json');
-       res.send( context);
- 
-  });
-});
-
-
-app.get('/',function(req,res,next){
-    res.render('home');
-});
 
 /*
 app.post('/update',function(req,res,next){
