@@ -90,12 +90,12 @@ function displayTable(){
   
   
 function deleteMe(){
-document.getElementById(delete1).addEventListener('click', function(event){
+deleteSubmit.addEventListener('click', function(event){
   console.log("made it here");
     var req = new XMLHttpRequest();
     var payload = {id:null};
 
-    payload.id = document.getElementById('deleteID').value;
+    payload.id = document.getElementById('hiddenId.id').value;
     
     console.log(payload.id);
     req.open('POST', '/delete', true);
