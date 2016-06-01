@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', displayTable);
                         for(var p in response.results){
                             data  += response.results[p].name; + ", "
                         }
-                        document.getElementByName("name").textContent = data;
+                        document.getElementByName('name').textContent = data;
                         console.log(response);
                     } else {
                            console.log("Error in network request: " + request.statusText);
