@@ -50,7 +50,7 @@ function displayTable(){
                             
                             newCol = document.createElement("td");
                             newTest = document.createElement("button");
-                            newTest.id = "delete";
+                            newTest.id = "testing";
                             newCol.appendChild(newTest);
                             newRow.appendChild(newCol);
                             
@@ -71,7 +71,7 @@ function displayTable(){
   
   
 function bindDelete (){
-document.getElementById('delete').addEventListener('click', function(event){
+document.getElementById('testing').addEventListener('click', function(event){
   
     var req = new XMLHttpRequest();
     var payload = {id:null};
