@@ -6,11 +6,11 @@ document.addEventListener('DOMContentLoaded', displayTable);
 
                var req = new XMLHttpRequest();
                 req.open('GET', '/', true);
-                console.log("true");
+            
                req.addEventListener('load',function(){
                     if(req.status >= 200 && req.status < 400){
                         var response = req.responseText;
-                        console.log(response.id);
+                        console.log(response);
                     } else {
                            console.log("Error in network request: " + request.statusText);
                     } 
