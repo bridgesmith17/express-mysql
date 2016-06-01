@@ -59,6 +59,7 @@ function displayTable(){
                             deleteSubmit.setAttribute('type','button');
                             deleteSubmit.setAttribute('id',  'delete'+response.results[p].id);
                             deleteSubmit.value = 'Delete';
+                            deleteSubmit.setAttribute("oneclick", "deleteMe(this)");
                             
                             form.appendChild(deleteSubmit);
                           
@@ -90,7 +91,9 @@ function displayTable(){
   
   
 function deleteMe(){
-deleteSubmit.addEventListener('click', function(event){
+  
+  console.log("progress");
+/*deleteSubmit.addEventListener('click', function(event){
   console.log("made it here");
     var req = new XMLHttpRequest();
     var payload = {id:null};
@@ -111,7 +114,7 @@ deleteSubmit.addEventListener('click', function(event){
     req.send(JSON.stringify(payload));
  
     event.preventDefault();
-  });
+  });*/
 }
   
   
