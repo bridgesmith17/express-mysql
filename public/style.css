@@ -14,10 +14,10 @@ table{
   border-style:solid;
   
 }
-thead{
+tr{
   border-style:solid;
 }
 
-tbody{
+td{
   border-style:solid;
 }
