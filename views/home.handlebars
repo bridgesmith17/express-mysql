@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', bindInsert);
                         
                         for(var p in response.results){
                             newRow = document.createElement("tr");
-                            document.getElementById("body").appendChild(newRow);
+                            
                             
                             newCol = document.createElement("td");
                             newRow.appendChild(newCol);
@@ -35,7 +35,8 @@ document.addEventListener('DOMContentLoaded', bindInsert);
                             newCol = document.createElement("td");
                             newRow.appendChild(newCol);
                             newCol.textContent = response.results[p].lbs;
-
+                            
+                            document.getElementById("body").appendChild(newRow);
                         }
                   console.log(response);
                     } else {
