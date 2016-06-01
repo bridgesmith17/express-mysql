@@ -41,11 +41,20 @@ function displayTable(){
                             newCol.textContent = response.results[p].lbs;
                             
                             newCol = document.createElement("td");
+                       
+                          var form = document.createElement("form");                     
+                            form.method = 'POST';
+                            var hiddenId = document.createElement("input");
+                            hiddenId.setAttribute('type','hidden');
+                            hiddenId.setAttribute('id', response.results[p].id);
+                            hiddenId.value(response.results[p].id);
                             
-                        newCol.innerHTML = response.results[p].id;
+                          
+                     //   newCol.innerHTML = response.results[p].id;
                             
 
      //                       newCol.innerHTML = '<form method="post"><p><input type="hidden" name="deleteID" id = "deleteID" value="" ></p><p><input type="submit" name="delete" id="delete" value="Delete"></p></form>';
+                            newCol.appendChild(form);
                             newRow.appendChild(newCol);
                             
                             
