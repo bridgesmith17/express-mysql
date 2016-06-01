@@ -69,11 +69,13 @@ if(req.body.name != null && req.body.name != "" && req.body.updateID == null)
       return;
     }
      context.results = JSON.stringify(rows);
-     console.log(context.results);
+    
      res.type('application/json');
-     res.render('home');
+     
  
   });
+  res.render('home');
+  
 });
 
 /*
