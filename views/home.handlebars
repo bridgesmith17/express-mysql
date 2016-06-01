@@ -1,7 +1,28 @@
+<script>
+                    
+
+                var req = new XMLHttpRequest();
+              
+                req.open('GET', express-mysql/helloMysql.js, true);
+               
+              req.addEventListener('load',function(){
+                    if(req.status >= 200 && req.status < 400){
+                        var response = JSON.parse(req.responseText);
+                        console.log(response);
+                        
+                    } else {
+                           console.log("Error in network request: " + request.statusText);
+                    } 
+                  
+                });
+                   req.send(null);
+                   event.preventDefault();
+         
+      
+</script>
 
 
-
-
+<!--
 <h1>Add New Exercise</h1>
 
 <form method="post" name="exercise-form" >
@@ -30,7 +51,7 @@
       
   </p>
 </form>
-
+-->
 <h1>List of Excercises</h1>
 
 <table id="dataTable">
@@ -49,7 +70,7 @@
             <td>{{this.weight}}
             <td>{{this.date}}
             <td>{{this.lbs}}
-            <td><form method="post" action="/update">
+<!--            <td><form method="post" action="/update">
                         <p><input type="hidden" name="updateID" value="{{this.id}}"></p>
                         <p><input type="submit" name="update" value="Edit"</p>
                 </form>
@@ -57,7 +78,7 @@
                         <p><input type="hidden" name="deleteID" value="{{this.id}}"></p>
                         <p><input type="submit" name="delete" value="Delete"</p>
                 </form>
-                   
+    -->               
         
         </tr> {{/each}}
         
