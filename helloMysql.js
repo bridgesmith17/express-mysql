@@ -77,7 +77,7 @@ if(req.body.name != null && req.body.name != "" && req.body.updateID == null)
 
 /*  res.render('home'); */
 });
-
+/*
 app.get('/',function(req,res){
   res.render('home');
 });
