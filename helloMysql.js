@@ -73,7 +73,7 @@ if(req.body.name != null && req.body.name != "" && req.body.updateID == null)
      context.results = rows;
     
      res.type('application/json');
-       res.send( context);
+       res.render( context);
  
   });
 //  } else {/
