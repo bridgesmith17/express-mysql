@@ -82,10 +82,9 @@ function displayTable(){
                             form.appendChild(hiddenId);
                             
                             var updateSubmit = document.createElement("input");
-                            updateSubmit.setAttribute("type","button");
+                            updateSubmit.setAttribute("type","submit");
                             updateSubmit.setAttribute("id",  "update"+response.results[p].id);
-                            updateSubmit.value = "Delete";
-                            updateSubmit.setAttribute("onclick", "updateMe(this)" );
+                            updateSubmit.value = "Update";
                             
                             form.appendChild(updateSubmit);
                           
