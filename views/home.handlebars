@@ -46,8 +46,8 @@ function displayTable(){
                             form.method = 'POST';
                             var hiddenId = document.createElement("input");
                             hiddenId.setAttribute('type','hidden');
-                            hiddenId.setAttribute('id', response.results[p].id);
-                            hiddenId.value = "delete"+response.results[p].id;
+                            hiddenId.setAttribute('id',  'delete'+response.results[p].id);
+                            hiddenId.value = response.results[p].id;
                             
                             form.appendChild(hiddenId);
                             
