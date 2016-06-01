@@ -60,7 +60,7 @@ document.getElementById('newSubmit').addEventListener('click', function(event){
     req.addEventListener('load',function(){
       if(req.status >= 200 && req.status < 400){
                             newwRow = document.createElement("tr");
-                            document.getElementById("body").appendChild(newRow);
+                            
                             
                             newCol = document.createElement("td");
                             newRow.appendChild(newCol);
@@ -70,17 +70,9 @@ document.getElementById('newSubmit').addEventListener('click', function(event){
                             newRow.appendChild(newCol);
                             newCol.textContent = response.results[p].reps;
                             
-                            newCol = document.createElement("td");
-                            newRow.appendChild(newCol);
-                            newCol.textContent = response.results[p].weight;
+                             document.getElementById("body").appendChild(newRow);
                             
-                            newCol = document.createElement("td");
-                            newRow.appendChild(newCol);
-                            newCol.textContent = response.results[p].date;
-                            
-                            newCol = document.createElement("td");
-                            newRow.appendChild(newCol);
-                            newCol.textContent = response.results[p].lbs;
+                     
       } else {
         console.log("Error in network request: " + request.statusText);
       }});
