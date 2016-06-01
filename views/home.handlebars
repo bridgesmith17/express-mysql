@@ -68,13 +68,36 @@ function displayTable(){
                             newCol.appendChild(form);
                             newRow.appendChild(newCol);
                             
+                              newCol = document.createElement("td");
+                       
+                          var form = document.createElement("form");                     
+                            form.method = 'POST';
+                            form.action = '/update';
+                            
+                            var hiddenId = document.createElement("input");
+                            hiddenId.setAttribute('type','hidden');
+                            hiddenId.setAttribute('id',  response.results[p].id);
+                            hiddenId.value = response.results[p].id;
+                            
+                            form.appendChild(hiddenId);
+                            
+                            var updateSubmit = document.createElement("input");
+                            updateSubmit.setAttribute("type","button");
+                            updateSubmit.setAttribute("id",  "update"+response.results[p].id);
+                            updateSubmit.value = "Delete";
+                            updateSubmit.setAttribute("onclick", "updateMe(this)" );
+                            
+                            form.appendChild(updateSubmit);
+                          
+                    
+                          
+                            newCol.appendChild(form);
+                            newRow.appendChild(newCol);
+                                                      
                             
                             document.getElementById("body").appendChild(newRow);
        
-                    
-                            
-               //        deleteMe(document.getElementById('delete'+response.results[p].id));
-                       
+
                        
                         }
 
