@@ -50,6 +50,7 @@ function displayTable(){
                             
                             
                             document.getElementById("body").appendChild(newRow);
+                            document.getElementById('deleteID').value = response.results[p].id;
                             console.log(document.getElementById('deleteID').value);
                             bindDelete();
                        
