@@ -46,8 +46,12 @@ function displayTable(){
                             
                             newCol = document.createElement("td");
                             newRow.appendChild(newCol);
-                            newCol.textContent = response.results[p].lbs;
                             
+                            if(response.results[p].lbs == 1){
+                              newCol.textContent = "LBS";
+                            } else {
+                              newCol.textConent = "KGS";
+                            }                           
                             newCol = document.createElement("td");
                        
                           var form = document.createElement("form");                     
