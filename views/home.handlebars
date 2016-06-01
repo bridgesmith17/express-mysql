@@ -109,6 +109,7 @@ function deleteMe(delButton){
         console.log("Error in network request: " + request.statusText);
       }});
     req.send(JSON.stringify(payload));
+    displayTable();
     event.preventDefault();
 }
   
