@@ -13,8 +13,7 @@ function displayTable(){
                         var response = JSON.parse(req.responseText);
                         
                         for(var p in response.results){
-                          var deleteMe=  "<p><input type="hidden" name="deleteID" value="response.results[p].id"></p>
-                        <p><input type="submit" name="delete" value="Delete"></p>";
+                          var deleteMe=  "<p><input type="submit" name="delete" value="Delete"></p>";
                           
                             newRow = document.createElement("tr");
                             
