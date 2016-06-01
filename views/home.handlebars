@@ -54,7 +54,7 @@ function displayTable(){
                             
                             var deleteSubmit = document.createElement("input");
                             deleteSubmit.setAttribute('type','submit');
-                            deleteSubmit.setAttribute('id',  response.results[p].id);
+                            deleteSubmit.setAttribute('id',  'delete'+response.results[p].id);
                             deleteSubmit.value = 'Delete';
                             
                             form.appendChild(deleteSubmit);
@@ -69,7 +69,7 @@ function displayTable(){
        
                     
                             
-                       console.log(document.getElementById(response.results[p].id));
+                       console.log(document.getElementById('delete'+response.results[p].id));
                        
                        
                         }
