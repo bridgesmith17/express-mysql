@@ -1,7 +1,8 @@
 <script>
 
-document.addEventListener('DOMContentLoaded', bindInsert);
+
 document.addEventListener('DOMContentLoaded', displayTable);
+document.addEventListener('DOMContentLoaded', bindInsert);
   function displayTable(){
 
                var req = new XMLHttpRequest();
@@ -50,7 +51,7 @@ document.addEventListener('DOMContentLoaded', displayTable);
 document.getElementById('newSubmit').addEventListener('click', function(event){
   table = document.getElementById(dataTable);
   tbody= document.getElementById("body");
-  table.removeChild(tbody);
+  var oldTable = table.removeChild(tbody);
   body = document.createElement("tbody");
   table.appendChild(body);
   displayTable();
