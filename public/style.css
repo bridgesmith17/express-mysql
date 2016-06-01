@@ -41,6 +41,7 @@ h1{
 }
 
 #display{
+  padding: 15px;
   background: #A1Ca8F;
   border-style:solid;
   bordor-color:#506547;
