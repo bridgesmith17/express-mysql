@@ -8,7 +8,11 @@ document.addEventListener('DOMContentLoaded', bindInsert);
 
 
 function displayTable(){
-
+  var content = document.getElementById("body").appendChild(newRow);
+  if(content.hasChildNodes()){
+    console.log("existing table");
+  }
+  
                var req = new XMLHttpRequest();
                 req.open('GET', '/select', true);
                 var data = "";
@@ -169,7 +173,8 @@ document.getElementById('newSubmit').addEventListener('click', function(event){
 
 
 function getNew(){
-
+  
+    
                var req = new XMLHttpRequest();
                 req.open('GET', '/selectNew', true);
                req.addEventListener('load',function(){
