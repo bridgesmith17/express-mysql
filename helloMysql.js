@@ -39,6 +39,21 @@ app.post('/delete', function(req, res, next){
 });
 
 
+app.post('/update',function(req,res,next){
+  var context = {};
+    mysql.pool.query("SELECT * FROM workouts WHERE id=?", [req.body.updateID], function(err, result){
+    if(err){
+      next(err);
+      return;
+    }
+  context.info = result;
+  console.log(result);
+  res.render('update', context);
+});
+});
+
+
+
 
 app.get('/select',function(req,res,next){
     
@@ -148,20 +163,7 @@ if(req.body.name != null && req.body.name != "" && req.body.updateID == null)
 */    
 
 
-/*
-app.post('/update',function(req,res,next){
-  var context = {};
-    mysql.pool.query("SELECT * FROM workouts WHERE id=?", [req.body.updateID], function(err, result){
-    if(err){
-      next(err);
-      return;
-    }
-  context.info = result;
-  console.log(result);
-  res.render('update', context);
-});
-});
-*/
+
 
 
 /*
