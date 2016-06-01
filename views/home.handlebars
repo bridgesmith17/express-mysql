@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', displayTable);
                     if(req.status >= 200 && req.status < 400){
                         var response = req.responseText;
                         document.getElementById('name').textContent = response.name;
-                        document.getElementById('name1').textContent = response.results[0].name;
+                   
                         
                         console.log(response);
                     } else {
