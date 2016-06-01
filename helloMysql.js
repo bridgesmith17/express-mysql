@@ -108,6 +108,20 @@ app.get('/selectNew',function(req,res,next){
 
 
 app.get('/',function(req,res,next){
+  if(req.body.updateID){
+            mysql.pool.query("UPDATE workouts SET name=?, reps=?, weight=?, date=?, lbs=? WHERE id=? ",
+        [req.body.name, req.body.reps, req.body.weight, req.body.date, req.body.lbs, req.body.updateID],
+      
+  //    mysql.pool.query("UPDATE workouts SET name =? WHERE ID=?", [req.body.name, req.body.updateID],
+        function(err, result){
+        if(err){
+          next(err);
+          return;
+        }
+        });
+  //    res.render('update');
+    
+  }
     res.render('home');
 });
 
