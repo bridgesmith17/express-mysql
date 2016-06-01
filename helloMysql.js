@@ -68,8 +68,8 @@ if(req.body.name != null && req.body.name != "" && req.body.updateID == null)
       next(err);
       return;
     }
-     context.results = rows;
-     res.type('text/plain');
+     context.results = JSON.stringify(rows);
+//     res.type('text/plain');
      res.render('home', context);
  
   });
