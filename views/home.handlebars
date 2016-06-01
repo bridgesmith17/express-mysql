@@ -3,7 +3,7 @@
 
 document.addEventListener('DOMContentLoaded', displayTable);
 document.addEventListener('DOMContentLoaded', bindInsert);
-  function displayTable(){
+function displayTable(){
 
                var req = new XMLHttpRequest();
                 req.open('GET', '/select', true);
@@ -49,6 +49,8 @@ document.addEventListener('DOMContentLoaded', bindInsert);
          
   }
   
+  
+  
   function bindInsert (){
 document.getElementById('newSubmit').addEventListener('click', function(event){
     var req = new XMLHttpRequest();
@@ -61,28 +63,61 @@ document.getElementById('newSubmit').addEventListener('click', function(event){
     req.addEventListener('load',function(){
       if(req.status >= 200 && req.status < 400){
         var response = JSON.parse(req.responseText);
-        
-                            newRow = document.createElement("tr");
-                            
-                            
-                            newCol = document.createElement("td");
-                            newRow.appendChild(newCol);
-                            newCol.textContent = "testing"; 
-        /*                    
-                            newCol = document.createElement("td");
-                            newRow.appendChild(newCol);
-                            newCol.textContent = response.results[p].reps;
-                            
-                             document.getElementById("body").appendChild(newRow);
-                */            
                      
       } else {
         console.log("Error in network request: " + request.statusText);
       }});
     req.send(JSON.stringify(payload));
+    getNew();
     event.preventDefault();
   });
 }
+
+function getNew(){
+
+               var req = new XMLHttpRequest();
+                req.open('GET', '/selectNew', true);
+               req.addEventListener('load',function(){
+                    if(req.status >= 200 && req.status < 400){
+                        var response = JSON.parse(req.responseText);
+                        
+                            newRow = document.createElement("tr");
+                            
+                            
+                            newCol = document.createElement("td");
+                            newRow.appendChild(newCol);
+                            newCol.textContent = response.results[0].name; 
+                            
+  /*                          
+                            newCol = document.createElement("td");
+                            newRow.appendChild(newCol);
+                            newCol.textContent = response.results[p].reps;
+                            
+                            newCol = document.createElement("td");
+                            newRow.appendChild(newCol);
+                            newCol.textContent = response.results[p].weight;
+                            
+                            newCol = document.createElement("td");
+                            newRow.appendChild(newCol);
+                            newCol.textContent = response.results[p].date;
+                            
+                            newCol = document.createElement("td");
+                            newRow.appendChild(newCol);
+                            newCol.textContent = response.results[p].lbs;
+    */                        
+                            document.getElementById("body").appendChild(newRow);
+                        }
+                  console.log(response);
+                    } else {
+                           console.log("Error in network request: " + request.statusText);
+                    } 
+                });
+                   req.send(null);
+                   event.preventDefault();
+         
+  }
+
+
 </script>
 
 <h1>Add New Exercise</h1>
