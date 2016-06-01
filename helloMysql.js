@@ -62,9 +62,8 @@ app.post('update-do',function(req,res, next){
           next(err);
           return;
         }
+        });
       res.render('home');
-      
-      });
     
       
     });
