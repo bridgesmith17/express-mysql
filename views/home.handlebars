@@ -54,7 +54,7 @@ function displayTable(){
                             
                             var deleteSubmit = document.createElement("input");
                             deleteSubmit.setAttribute('type','submit');
-                            deleteSubmit.setAttribute('id',  'delete'+response.results[p].id);
+                            deleteSubmit.setAttribute('id',  response.results[p].id);
                             deleteSubmit.value = 'Delete';
                             
                             form.appendChild(deleteSubmit);
@@ -68,8 +68,8 @@ function displayTable(){
                             document.getElementById("body").appendChild(newRow);
        
                     
-       //                     bindDelete();
-                       
+                            
+                       deleteMe(document.getElementById(response.results[p].id));
                        
                        
                         }
@@ -84,8 +84,8 @@ function displayTable(){
   }
   
   
-function bindDelete (){
-document.getElementById('delete').addEventListener('click', function(event){
+function deleteMe(deleteID){
+document.getElementById(deleteID).addEventListener('click', function(event){
   console.log("made it here");
     var req = new XMLHttpRequest();
     var payload = {id:null};
