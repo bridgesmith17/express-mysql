@@ -70,7 +70,7 @@ if(req.body.name != null && req.body.name != "" && req.body.updateID == null)
     }
      context.results = JSON.stringify(rows);
      console.log(context.results);
-     res.type('text/plain');
+     res.type('application/json');
      res.render('home');
  
   });
