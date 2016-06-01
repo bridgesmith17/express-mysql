@@ -22,10 +22,20 @@ app.post('/insert',function(req,res,next){
       next(err);
       return;
     }
-  });  
+  }); 
+   var context = {};
+  mysql.pool.query('SELECT * FROM workouts', function(err, rows, fields){
+    if(err){
+      next(err);
+      return;
+    }
+     context.results = rows;
+    
+     res.type('application/json');
+       res.send( context);
   
 }
-next();
+
 });
 
 app.get('/select',function(req,res,next){
