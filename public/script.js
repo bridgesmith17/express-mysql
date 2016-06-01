@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', bindInsert);
 //displays table when the page is loaded or called after the start of another ajax event.
 function displayTable(){
   //checks to see if a table is already on the page and if so deletes it to make room for the updated content. 
- if(document.getElementById){
+ if(document.getElementById("body")){
   var content = document.getElementById("body");
   
   if(content.hasChildNodes()){
