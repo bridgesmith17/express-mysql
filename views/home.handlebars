@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', displayTable);
 
   function displayTable(){
                 var req = new XMLHttpRequest();
-                req.open('GET', express-mysql/helloMysql.js, true);
+                req.open('GET', '/express-mysql/helloMysql.js', true);
                 req.addEventListener('load',function(){
                     if(req.status >= 200 && req.status < 400){
                         var response = JSON.parse(req.responseText);
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', displayTable);
                    event.preventDefault();
          
   }
-  
+/*  
   document.getElementByName('newSubmit').addEventListener('click', function(event){
     var req = new XMLHttpRequest();
     var payload = {name:null, reps:null};
@@ -35,6 +35,8 @@ document.addEventListener('DOMContentLoaded', displayTable);
     req.send(JSON.stringify(payload));
     event.preventDefault();
   });
+  
+  */
 </script>
 
 
