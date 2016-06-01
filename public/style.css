@@ -8,16 +8,10 @@
 .centered {
 /*  position: absolute; /* or absolute */
  /* top: 50%; */
-  padding-left: 10cm;
+  padding-left: 2cm;
 }
 
 table{
   border-style:solid;
 }
-th{
-  border-style:solid;
-  
-}
-td{
-  border-style:solid;
-}
+
