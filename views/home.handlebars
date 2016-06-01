@@ -12,12 +12,29 @@ document.addEventListener('DOMContentLoaded', displayTable);
                         var response = JSON.parse(req.responseText);
                         
                         for(var p in response.results){
-                            data  = response.results[p].name;
                             newRow = document.createElement("tr");
-                            newCol = document.createElement("td");
                             document.getElementById("body").appendChild(newRow);
+                            
+                            newCol = document.createElement("td");
                             newRow.appendChild(newCol);
-                            newRow.textContent = data; 
+                            newCol.textContent = results[p].name; 
+                            
+                            newCol = document.createElement("td");
+                            newRow.appendChild(newCol);
+                            newCol.textContent = results[p].reps;
+                            
+                            newCol = document.createElement("td");
+                            newRow.appendChild(newCol);
+                            newCol.textContent = results[p].weight;
+                            
+                            newCol = document.createElement("td");
+                            newRow.appendChild(newCol);
+                            newCol.textContent = results[p].date;
+                            
+                            newCol = document.createElement("td");
+                            newRow.appendChild(newCol);
+                            newCol.textContent = results[p].lbs;
+
                         }
                   console.log(response);
                     } else {
