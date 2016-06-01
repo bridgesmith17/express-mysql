@@ -44,24 +44,29 @@ function displayTable(){
                        
                           var form = document.createElement("form");                     
                             form.method = 'POST';
+                            
                             var hiddenId = document.createElement("input");
                             hiddenId.setAttribute('type','hidden');
-                            hiddenId.setAttribute('id',  'delete'+response.results[p].id);
+                            hiddenId.setAttribute('id',  response.results[p].id);
                             hiddenId.value = response.results[p].id;
                             
                             form.appendChild(hiddenId);
                             
-                          
-                     //   newCol.innerHTML = response.results[p].id;
+                            var deleteSubmit = document.createElement("input");
+                            deleteSubmit.setAttribute('type','submit');
+                            deleteSubmit.setAttribute('id',  'delete'+response.results[p].id);
+                            deleteSubmit.value = 'Delete';
                             
-
-     //                       newCol.innerHTML = '<form method="post"><p><input type="hidden" name="deleteID" id = "deleteID" value="" ></p><p><input type="submit" name="delete" id="delete" value="Delete"></p></form>';
+                            form.appendChild(deleteSubmit);
+                          
+                    
+                          
                             newCol.appendChild(form);
                             newRow.appendChild(newCol);
                             
                             
                             document.getElementById("body").appendChild(newRow);
-       //                     document.getElementById('deleteID').value = response.results[p].id;
+       
                     
        //                     bindDelete();
                        
