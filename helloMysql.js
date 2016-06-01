@@ -68,7 +68,7 @@ if(req.body.name != null && req.body.name != "" && req.body.updateID == null)
       next(err);
       return;
     }
-     context.results = JSON.stringify(rows);
+     context.results = rows;
     
      res.type('application/json');
        res.send(context);
