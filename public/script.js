@@ -126,7 +126,7 @@ function deleteMe(delButton){
 
     payload.id = delButton.previousElementSibling.value;
     
-    console.log(payload.id);
+   
     req.open('POST', '/delete', true);
     req.setRequestHeader('Content-Type', 'application/json');
  
@@ -146,8 +146,6 @@ function deleteMe(delButton){
 //inserts a new value into the database with input for the fomr.   
 function bindInsert (){
 document.getElementById('newSubmit').addEventListener('click', function(event){
-  
-  console.log("Error Hunt!");
   
     var req = new XMLHttpRequest();
     var payload = {name:null, reps:null, weight:null, date:null, lbs:null};
