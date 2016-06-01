@@ -71,11 +71,11 @@ if(req.body.name != null && req.body.name != "" && req.body.updateID == null)
      context.results = JSON.stringify(rows);
     
      res.type('application/json');
-       res.render('home', context.results);
+       res.send(context);
  
   });
 
-  
+  res.render('home');
 });
 
 /*
