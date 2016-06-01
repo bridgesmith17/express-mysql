@@ -28,9 +28,7 @@ app.post('/insert',function(req,res,next){
   
 });
 
-app.get('/',function(req,res,next){
-    res.render('home');
-});
+
 
 
 app.get('/select',function(req,res,next){
@@ -47,6 +45,10 @@ app.get('/select',function(req,res,next){
        res.send( context);
  
   });
+});
+
+app.get('/',function(req,res,next){
+    res.render('home');
 });
 
 
