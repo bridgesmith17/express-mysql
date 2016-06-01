@@ -14,6 +14,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 
+app.get('/',function(req,res,next){
+    res.render('home');
+});
+
 app.post('/insert',function(req,res,next){
   if(req.body.name != null && req.body.name != "" && req.body.updateID == null)
   {
@@ -44,9 +48,7 @@ app.get('/select',function(req,res,next){
 });
 
 
-app.get('/',function(req,res,next){
-    res.render('home');
-});
+
 
   
   /*
