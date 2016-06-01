@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', displayTable);
                         document.getElementById('name').textContent = response.name;
                    
                         
-                        console.log(response[0]);
+                        console.log(response.results);
                     } else {
                            console.log("Error in network request: " + request.statusText);
                     } 
