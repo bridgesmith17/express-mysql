@@ -174,59 +174,6 @@ document.getElementById('newSubmit').addEventListener('click', function(event){
   });
 }
 
-
-function getNew(){
-  
-    
-               var req = new XMLHttpRequest();
-                req.open('GET', '/selectNew', true);
-               req.addEventListener('load',function(){
-                    if(req.status >= 200 && req.status < 400){
-                        var response = JSON.parse(req.responseText);
-                        
-                            newRow = document.createElement("tr");
-                            
-                            
-                            newCol = document.createElement("td");
-                            newRow.appendChild(newCol);
-                            newCol.textContent = response.results[0].name; 
-                           
-                           
-                            newCol = document.createElement("td");
-                            newRow.appendChild(newCol);
-                            newCol.textContent = response.results[0].reps;
-                            
-                            newCol = document.createElement("td");
-                            newRow.appendChild(newCol);
-                            newCol.textContent = response.results[0].weight;
-                           
-                            newCol = document.createElement("td");
-                            newRow.appendChild(newCol);
-                            newCol.textContent = response.results[0].date;
-                            
-                            newCol = document.createElement("td");
-                            newRow.appendChild(newCol);
-                            newCol.textContent = response.results[0].lbs;
-                           
-                            document.getElementById("body").appendChild(newRow);
-                            
-                            document.getElementById("name").value="";
-                            document.getElementById("reps").value="";
-                            document.getElementById("weight").value="";
-                            document.getElementById("date").value="";
-                            document.getElementById("lbs").value=1;
-                            
-
-                    } else {
-                           console.log("Error in network request: " + request.statusText);
-                    } 
-                });
-                   req.send(null);
-                   event.preventDefault();
-         
-  }
-
-
 </script>
 
 <h1>Add New Exercise</h1>
