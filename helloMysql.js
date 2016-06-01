@@ -80,7 +80,7 @@ if(req.body.name != null && req.body.name != "" && req.body.updateID == null)
 
 app.get('/',function(req,res,next){
   res.render('home');
-}
+});
 
 /*
 app.post('/update',function(req,res,next){
