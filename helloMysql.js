@@ -71,7 +71,7 @@ if(req.body.name != null && req.body.name != "" && req.body.updateID == null)
      context.results = rows;
     
      res.type('application/json');
-       res.semd( context);
+       res.send( context);
  
   });
 
