@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', displayTable);
                req.addEventListener('load',function(){
                     if(req.status >= 200 && req.status < 400){
                         var response = req.responseText;
-    //                    document.getElementById('name').textContent = response.results.name;
+                        document.getElementById('name').textContent = response.name;
                         document.getElementById('name1').textContent = response.results;
                         
                         console.log(response);
