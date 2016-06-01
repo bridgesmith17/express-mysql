@@ -41,7 +41,7 @@ app.post('/delete', function(req, res, next){
 
 app.post('/update',function(req,res,next){
   var context = {};
-    mysql.pool.query("SELECT * FROM workouts WHERE id=?", [req.body.update], function(err, result){
+    mysql.pool.query("SELECT * FROM workouts WHERE id=?", [req.body.updateID], function(err, result){
     if(err){
       next(err);
       return;
