@@ -51,8 +51,11 @@ function displayTable(){
   
   
   
-  function bindInsert (){
+function bindInsert (){
 document.getElementById('newSubmit').addEventListener('click', function(event){
+  
+  console.log("Error Hunt!");
+  /*
     var req = new XMLHttpRequest();
 //    var payload = {name:null, reps:null, weight:null, date:null, lbs:null};
 var payload={name:null};
@@ -73,9 +76,10 @@ var payload={name:null};
       }});
     req.send(JSON.stringify(payload));
 //    getNew();
-    event.preventDefault();
+    event.preventDefault();*/
   });
 }
+
 /*
 function getNew(){
 
