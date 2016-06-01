@@ -28,6 +28,15 @@ app.post('/insert',function(req,res,next){
   
 });
 
+app.post('/delete', function(req, res, next){
+    mysql.pool.query("DELETE FROM workouts WHERE id=?", [req.body.deleteID], function(err, result){
+    if(err){
+      next(err);
+      return;
+    }
+  
+  });
+});
 
 
 
@@ -62,6 +71,7 @@ app.get('/selectNew',function(req,res,next){
  
   });
 });
+
 
 app.get('/',function(req,res,next){
     res.render('home');
