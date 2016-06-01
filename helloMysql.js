@@ -48,30 +48,9 @@ app.post('/update',function(req,res,next){
       return;
     }
   context.info = result;
-  console.log(result);
   res.render('update', context);
 });
 });
-
-app.post('/update-do',function(req,res, next){
-console.log(req.body.name);
-  console.log(req.body.updateID);
-        mysql.pool.query("UPDATE workouts SET name=?, reps=?, weight=?, date=?, lbs=? WHERE id=? ",
-        [req.body.name, req.body.reps, req.body.weight, req.body.date, req.body.lbs, req.body.updateID],
-      
-  //    mysql.pool.query("UPDATE workouts SET name =? WHERE ID=?", [req.body.name, req.body.updateID],
-        function(err, result){
-        if(err){
-          next(err);
-          return;
-        }
-        });
-  //    res.render('update');
-    
-      
-    });
-
-
 
 
 app.get('/select',function(req,res,next){
@@ -96,118 +75,19 @@ app.all('/',function(req,res,next){
             mysql.pool.query("UPDATE workouts SET name=?, reps=?, weight=?, date=?, lbs=? WHERE id=? ",
         [req.body.name, req.body.reps, req.body.weight, req.body.date, req.body.lbs, req.body.updateID],
       
-  //    mysql.pool.query("UPDATE workouts SET name =? WHERE ID=?", [req.body.name, req.body.updateID],
+
         function(err, result){
         if(err){
           next(err);
           return;
         }
         });
-  //    res.render('update');
+
     
   }
     res.render('home');
 });
 
-
-
-
-  
-  /*
-   var context = {};
-   
-  mysql.pool.query('SELECT * FROM workouts', function(err, rows, fields){
-    if(err){
-      next(err);
-      return;
-    }
-     context.results = rows;
-    
-     res.type('application/json');
-       res.send( context);
-  
-});
-
-}
-
-});
-*/
-
-  /*
-if(req.body.name != null && req.body.name != "" && req.body.updateID == null)
-  {
-    mysql.pool.query("INSERT INTO workouts (`name`,`reps`, `weight`, `date`, `lbs`) VALUES (?,?,?,?,?)", [req.body.name, req.body.reps, req.body.weight, req.body.date, req.body.lbs], function(err, result){
-    if(err){
-      next(err);
-      return;
-    }
-  });  
-  } 
- /*  
-    mysql.pool.query("DELETE FROM workouts WHERE id=?", [req.body.deleteID], function(err, result){
-    if(err){
-      next(err);
-      return;
-    }
-  
-  });
-  
-    mysql.pool.query("SELECT * FROM workouts WHERE id=?", [req.body.updateID], function(err, result){
-    if(err){
-      next(err);
-      return;
-    }
-   
-    
-    if(result.length == 1){
- //     var curVals = result[0];
-      mysql.pool.query("UPDATE workouts SET name=?, reps=?, weight=?, date=?, lbs=? WHERE id=? ",
-  //      [req.body.name || curVals.name, req.body.reps || curVals.reps, req.body.weight || curVals.weight, req.body.date || curVals.date, req.body.lbs || curVals.lbs, req.body.updateID],
-        [req.body.name, req.body.reps, req.body.weight, req.body.date, req.body.lbs, req.body.updateID],
-        function(err, result){
-        if(err){
-          next(err);
-          return;
-        }
-      
-      
-      });
-    }
-    
-      
-    });
-    
-*/    
-
-
-
-
-
-/*
-///safe-update?id=1&name=The+Task&done=false
-app.get('/safe-update',function(req,res,next){
-  var context = {};
-  mysql.pool.query("SELECT * FROM todo WHERE id=?", [req.query.id], function(err, result){
-    if(err){
-      next(err);
-      return;
-    }
-    if(result.length == 1){
-      var curVals = result[0];
-      mysql.pool.query("UPDATE todo SET name=?, done=?, due=? WHERE id=? ",
-        [req.query.name || curVals.name, req.query.done || curVals.done, req.query.due || curVals.due, req.query.id],
-        function(err, result){
-        if(err){
-          next(err);
-          return;
-        }
-        context.results = "Updated " + result.changedRows + " rows.";
-        res.render('home',context);
-      });
-    }
-  });
-});
-*/
 app.get('/reset-table',function(req,res,next){
   var context = {};
   mysql.pool.query("DROP TABLE IF EXISTS workouts", function(err){ //replace your connection pool with the your variable containing the connection pool
