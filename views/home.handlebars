@@ -49,12 +49,6 @@ document.addEventListener('DOMContentLoaded', bindInsert);
   
   function bindInsert (){
 document.getElementById('newSubmit').addEventListener('click', function(event){
-  table = document.getElementById(dataTable);
-  tbody= document.getElementById("body");
-  var oldTable = table.removeChild(tbody);
-  body = document.createElement("tbody");
-  table.appendChild(body);
-  displayTable();
     var req = new XMLHttpRequest();
     var payload = {name:null};
     payload.name = document.getElementById('name').value;
@@ -62,7 +56,28 @@ document.getElementById('newSubmit').addEventListener('click', function(event){
     req.setRequestHeader('Content-Type', 'application/json');
     req.addEventListener('load',function(){
       if(req.status >= 200 && req.status < 400){
-        
+                            newwRow = document.createElement("tr");
+                            document.getElementById("body").appendChild(newRow);
+                            
+                            newCol = document.createElement("td");
+                            newRow.appendChild(newCol);
+                            newCol.textContent = response.results[p].name; 
+                            
+                            newCol = document.createElement("td");
+                            newRow.appendChild(newCol);
+                            newCol.textContent = response.results[p].reps;
+                            
+                            newCol = document.createElement("td");
+                            newRow.appendChild(newCol);
+                            newCol.textContent = response.results[p].weight;
+                            
+                            newCol = document.createElement("td");
+                            newRow.appendChild(newCol);
+                            newCol.textContent = response.results[p].date;
+                            
+                            newCol = document.createElement("td");
+                            newRow.appendChild(newCol);
+                            newCol.textContent = response.results[p].lbs;
       } else {
         console.log("Error in network request: " + request.statusText);
       }});
