@@ -10,7 +10,9 @@ document.addEventListener('DOMContentLoaded', displayTable);
                req.addEventListener('load',function(){
                     if(req.status >= 200 && req.status < 400){
                         var response = JSON.parse(req.responseText);
-                        console.log(response.results.name);
+                        console.log(response.results[0].name);
+                        console.log(response.results[1].name);
+                        console.log(response.results[2].name);
                     } else {
                            console.log("Error in network request: " + request.statusText);
                     } 
@@ -19,12 +21,3 @@ document.addEventListener('DOMContentLoaded', displayTable);
                    event.preventDefault();
          
   }
-  </script>
-  
-  {{#each results}}
-	<tr>
-		<td>{{this.name}} </td>
-		<td>{{this.reps}} </td>
-		etc...
-	</tr>
-{{/each}}
