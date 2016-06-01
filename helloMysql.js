@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 
 
 
-app.get('/',function(req,res,next){
+app.get('/select',function(req,res,next){
   /*
 if(req.body.name != null && req.body.name != "" && req.body.updateID == null)
   {
@@ -73,7 +73,7 @@ if(req.body.name != null && req.body.name != "" && req.body.updateID == null)
      context.results = rows;
     
      res.type('application/json');
-       res.render( 'home', context);
+       res.send( context);
  
   });
 //  } else {/
@@ -96,8 +96,10 @@ app.post('/update',function(req,res,next){
   res.render('update', context);
 });
 });
-
-
+*/
+app.get('/',function(req,res,next){
+    res.render('update');
+});
 
 /*
 ///safe-update?id=1&name=The+Task&done=false
