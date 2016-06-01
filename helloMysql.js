@@ -69,8 +69,6 @@ if(req.body.name != null && req.body.name != "" && req.body.updateID == null)
       return;
     }
      context.results = rows;
-     
-     console.log(context);
      res.render('home', context);
  
   });
