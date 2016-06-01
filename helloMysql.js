@@ -63,8 +63,8 @@ if(req.body.name != null && req.body.name != "" && req.body.updateID == null)
     });
     */ 
     
-//    if(req.body.name){
-      var context = {};
+
+  var context = {};
   mysql.pool.query('SELECT * FROM workouts', function(err, rows, fields){
     if(err){
       next(err);
@@ -76,12 +76,11 @@ if(req.body.name != null && req.body.name != "" && req.body.updateID == null)
        res.send( context);
  
   });
-//  } else {/
-//  res.render('home'); 
-//  }
 });
 
-
+app.get('/',function(req,res,next){
+    res.render('home');
+});
 
 /*
 app.post('/update',function(req,res,next){
@@ -97,9 +96,7 @@ app.post('/update',function(req,res,next){
 });
 });
 */
-app.get('/',function(req,res,next){
-    res.render('home');
-});
+
 
 /*
 ///safe-update?id=1&name=The+Task&done=false
