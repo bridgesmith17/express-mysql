@@ -10,8 +10,10 @@ document.addEventListener('DOMContentLoaded', displayTable);
                req.addEventListener('load',function(){
                     if(req.status >= 200 && req.status < 400){
                         var response = req.responseText;
+                        document.getElementById('name').textContent = response.results.name;
+                        document.getElementById('name1').textContent = response.results;
                         
-                     //   console.log(response);
+                        console.log(response);
                     } else {
                            console.log("Error in network request: " + request.statusText);
                     } 
@@ -24,3 +26,7 @@ document.addEventListener('DOMContentLoaded', displayTable);
 </script>
 
 <h1> Testing ...1....2...3</h1>
+
+<p id= "name"></p>
+<p id= "name1"></p>
+
