@@ -13,7 +13,8 @@ document.addEventListener('DOMContentLoaded', displayTable);
                         for(var p in response.results){
                             data  += response.results[p].name; + ", "
                         }
-                  document.getElementById('body').textContent = data;                        
+                newRow = (document.getElementById('body')).createElement("tr");
+//                  document.getElementById('body').textContent = data;                        
                   console.log(response);
                     } else {
                            console.log("Error in network request: " + request.statusText);
