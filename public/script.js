@@ -1,13 +1,15 @@
 
-
+//when page is loaded display the table and activate forms submit button for new excerices
 document.addEventListener('DOMContentLoaded', displayTable);
 document.addEventListener('DOMContentLoaded', bindInsert);
 
 
 
-
+//displays table when the page is loaded or called after the start of another ajax event.
 function displayTable(){
+  //checks to see if a table is already on the page and if so deletes it to make room for the updated content. 
   var content = document.getElementById("body");
+  
   if(content.hasChildNodes()){
     while(content.firstChild){
       content.removeChild(content.firstChild);
@@ -20,9 +22,8 @@ function displayTable(){
                req.addEventListener('load',function(){
                     if(req.status >= 200 && req.status < 400){
                         var response = JSON.parse(req.responseText);
-                        
+                        //for each object that is returned via the response contstruct a row in the table for its content
                         for(var p in response.results){
-                          var deleteMe=  "<p></p>";
                           
                             newRow = document.createElement("tr");
                             
@@ -98,15 +99,11 @@ function displayTable(){
                             
                             form.appendChild(updateSubmit);
                           
-                    
-                          
                             newCol.appendChild(form);
                             newRow.appendChild(newCol);
                                                       
                             
                             document.getElementById("body").appendChild(newRow);
-       
-
                        
                         }
 
@@ -121,7 +118,7 @@ function displayTable(){
   
 
   
-  
+// function to be bound to delete button to delete that row by accessing the hidden id and passing it to a mysql function  
 function deleteMe(delButton){
   
     var req = new XMLHttpRequest();
@@ -146,7 +143,7 @@ function deleteMe(delButton){
 }
   
   
-  
+//inserts a new value into the database with input for the fomr.   
 function bindInsert (){
 document.getElementById('newSubmit').addEventListener('click', function(event){
   
@@ -172,7 +169,7 @@ document.getElementById('newSubmit').addEventListener('click', function(event){
       }});
     req.send(JSON.stringify(payload));
     displayTable();
-    document.getElementById("exercise-form").reset();
+    document.getElementById("exercise-form").reset(); //resets the information in the fomr after it has been sent.
     event.preventDefault();
   });
 }
