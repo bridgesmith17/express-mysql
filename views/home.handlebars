@@ -75,12 +75,12 @@ var payload={name:null};
         console.log("Error in network request: " + request.statusText);
       }});
     req.send(JSON.stringify(payload));
-//    getNew();
+    getNew();
     event.preventDefault();
   });
 }
 
-/*
+
 function getNew(){
 
                var req = new XMLHttpRequest();
@@ -95,7 +95,7 @@ function getNew(){
                             newCol = document.createElement("td");
                             newRow.appendChild(newCol);
                             newCol.textContent = response.results[0].name; 
-                            
+/*                            
                            
                             newCol = document.createElement("td");
                             newRow.appendChild(newCol);
@@ -112,14 +112,14 @@ function getNew(){
                             newCol = document.createElement("td");
                             newRow.appendChild(newCol);
                             newCol.textContent = response.results[0].lbs;
-                            
+  */                          
                             document.getElementById("body").appendChild(newRow);
                             
                             document.getElementById("name").value="";
-                            document.getElementById("reps").value="";
-                            document.getElementById("weight").value="";
-                            document.getElementById("name").value="";
-                            document.getElementById("name").value=1;
+    ///                        document.getElementById("reps").value="";
+       //                     document.getElementById("weight").value="";
+         //                   document.getElementById("name").value="";
+           //                 document.getElementById("name").value=1;
                             
 
                     } else {
@@ -131,7 +131,7 @@ function getNew(){
          
   }
 
-*/
+
 </script>
 
 <h1>Add New Exercise</h1>
