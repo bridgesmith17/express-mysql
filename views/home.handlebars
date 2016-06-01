@@ -41,12 +41,13 @@ function displayTable(){
                             
                             newCol = document.createElement("td");
                             newRow.appendChild(newCol);
-                            
+                            newCol.innerHtml= deleteMe;
+  /*                          
                             newForm = document.createElement("form");
                             newCol.appendChild(newForm);
                             newForm.method ="Post"
                             newForm.innerHtml = deleteMe;
-                            
+    */                        
                             document.getElementById("body").appendChild(newRow);
                         }
 
