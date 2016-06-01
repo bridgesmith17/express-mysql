@@ -49,6 +49,7 @@ document.addEventListener('DOMContentLoaded', displayTable);
   function bindInsert (){
 document.getElementById('newSubmit').addEventListener('click', function(event){
   table = document.getElementById(dataTable);
+  tbody= document.getElementByID("body");
   table.removeChild(tbody);
   body = document.createElement("tbody");
   table.appendChild(body);
