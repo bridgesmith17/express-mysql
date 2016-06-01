@@ -10,6 +10,14 @@
   padding-left: 2cm;
 }
 
-tr{
+table{
+  border-style:solid;
+  
+}
+thead{
+  border-style:solid;
+}
+
+tbody{
   border-style:solid;
 }
