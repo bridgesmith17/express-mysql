@@ -66,7 +66,7 @@ console.log(req.body.name);
           return;
         }
         });
-      res.render('update');
+  //    res.render('update');
     
       
     });
