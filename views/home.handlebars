@@ -17,23 +17,23 @@ document.addEventListener('DOMContentLoaded', displayTable);
                             
                             newCol = document.createElement("td");
                             newRow.appendChild(newCol);
-                            newCol.textContent = results[p].name; 
+                            newCol.textContent = response.results[p].name; 
                             
                             newCol = document.createElement("td");
                             newRow.appendChild(newCol);
-                            newCol.textContent = results[p].reps;
+                            newCol.textContent = response.results[p].reps;
                             
                             newCol = document.createElement("td");
                             newRow.appendChild(newCol);
-                            newCol.textContent = results[p].weight;
+                            newCol.textContent = response.results[p].weight;
                             
                             newCol = document.createElement("td");
                             newRow.appendChild(newCol);
-                            newCol.textContent = results[p].date;
+                            newCol.textContent = response.results[p].date;
                             
                             newCol = document.createElement("td");
                             newRow.appendChild(newCol);
-                            newCol.textContent = results[p].lbs;
+                            newCol.textContent = response.results[p].lbs;
 
                         }
                   console.log(response);
