@@ -69,11 +69,13 @@ function displayTable(){
   
 function bindDelete (){
 document.getElementById('delete').addEventListener('click', function(event){
-  
+  console.log("made it here");
     var req = new XMLHttpRequest();
     var payload = {id:null};
 
-    payload.name = document.getElementById('deleteID').value;
+    payload.id = document.getElementById('deleteID').value;
+    
+    console.log(payload.id);
     req.open('POST', '/delete', true);
     req.setRequestHeader('Content-Type', 'application/json');
  
