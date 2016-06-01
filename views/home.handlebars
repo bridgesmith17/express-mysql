@@ -98,7 +98,7 @@ function deleteMe(delButton){
     payload.id = delButton.previousElementSibling.value;
     
     console.log(payload.id);
-  /*  req.open('POST', '/delete', true);
+    req.open('POST', '/delete', true);
     req.setRequestHeader('Content-Type', 'application/json');
  
     req.addEventListener('load',function(){
@@ -109,9 +109,7 @@ function deleteMe(delButton){
         console.log("Error in network request: " + request.statusText);
       }});
     req.send(JSON.stringify(payload));
- 
     event.preventDefault();
-  });*/
 }
   
   
