@@ -55,15 +55,15 @@ function bindInsert (){
 document.getElementById('newSubmit').addEventListener('click', function(event){
   
   console.log("Error Hunt!");
-  /*
+  
     var req = new XMLHttpRequest();
 //    var payload = {name:null, reps:null, weight:null, date:null, lbs:null};
 var payload={name:null};
     payload.name = document.getElementById('name').value;
-    payload.reps = document.getElementById('reps').value;
-    payload.weight = document.getElementById('weight').value;
-    payload.date = document.getElementById('date').value;
-    payload.lbs = document.getElementById('lbs').value;
+//    payload.reps = document.getElementById('reps').value;
+  //  payload.weight = document.getElementById('weight').value;
+  //  payload.date = document.getElementById('date').value;
+//    payload.lbs = document.getElementById('lbs').value;
     req.open('POST', '/insert', true);
     req.setRequestHeader('Content-Type', 'application/json');
  
@@ -74,7 +74,7 @@ var payload={name:null};
       } else {
         console.log("Error in network request: " + request.statusText);
       }});
-    req.send(JSON.stringify(payload));*/
+    req.send(JSON.stringify(payload));
 //    getNew();
     event.preventDefault();
   });
