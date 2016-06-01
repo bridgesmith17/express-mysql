@@ -58,7 +58,7 @@ console.log(req.body.name);
   //    mysql.pool.query("UPDATE workouts SET name=?, reps=?, weight=?, date=?, lbs=? WHERE id=? ",
     //    [req.body.name, req.body.reps, req.body.weight, req.body.date, req.body.lbs, req.body.updateID],
       
-      mysql.pool.query("UPDATE workouts SET name =? ", [req.body.name],
+      mysql.pool.query("UPDATE workouts SET name =? WHERE ID=?", [req.body.name, req.body.updateID],
         function(err, result){
         if(err){
           next(err);
