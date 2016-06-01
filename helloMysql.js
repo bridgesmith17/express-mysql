@@ -63,7 +63,7 @@ if(req.body.name != null && req.body.name != "" && req.body.updateID == null)
     });
     */ 
     
-    if(req.body.name){
+//    if(req.body.name){
       var context = {};
   mysql.pool.query('SELECT * FROM workouts', function(err, rows, fields){
     if(err){
@@ -76,9 +76,9 @@ if(req.body.name != null && req.body.name != "" && req.body.updateID == null)
        res.send( context);
  
   });
-  } else {
-  res.render('home'); 
-  }
+//  } else {/
+//  res.render('home'); 
+//  }
 });
 
 
