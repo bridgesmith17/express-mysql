@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', displayTable);
                req.addEventListener('load',function(){
                     if(req.status >= 200 && req.status < 400){
                         var response = req.responseText;
-                        console.log(response);
+                        console.log(response.results);
                     } else {
                            console.log("Error in network request: " + request.statusText);
                     } 
