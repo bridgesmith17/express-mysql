@@ -14,7 +14,9 @@ document.addEventListener('DOMContentLoaded', displayTable);
                         for(var p in response.results){
                             data  = response.results[p].name;
                             newRow = document.createElement("tr");
+                            newCol = document.createElement("td");
                             document.getElementById("body").appendChild(newRow);
+                            newRow.appendChild(newCol);
                             newRow.textContent = data; 
                         }
                   console.log(response);
