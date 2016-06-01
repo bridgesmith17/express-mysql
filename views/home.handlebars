@@ -81,6 +81,7 @@ document.getElementById('newSubmit').addEventListener('click', function(event){
         console.log("Error in network request: " + request.statusText);
       }});
     req.send(JSON.stringify(payload));
+    displayTable();
     event.preventDefault();
   });
 }
