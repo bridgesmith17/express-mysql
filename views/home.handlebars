@@ -13,10 +13,8 @@ function displayTable(){
                         var response = JSON.parse(req.responseText);
                         
                         for(var p in response.results){
-                          var deleteMe=  "<form method="post">
-                        <p><input type="hidden" name="deleteID" value="response.results[p].id"></p>
-                        <p><input type="submit" name="delete" value="Delete"</p>
-                        </form>";
+                          var deleteMe=  "<p><input type="hidden" name="deleteID" value="response.results[p].id"></p>
+                        <p><input type="submit" name="delete" value="Delete"</p>";
                           
                             newRow = document.createElement("tr");
                             
@@ -44,7 +42,11 @@ function displayTable(){
                             
                             newCol = document.createElement("td");
                             newRow.appendChild(newCol);
-                            newCol.innerHtml = deleteMe;
+                            
+                            newForm = document.createElement("form");
+                            newCol.appendChild(newForm);
+                            newForm.method ="Post"
+                            newForm.innerHtml = deleteMe;
                             
                             document.getElementById("body").appendChild(newRow);
                         }
