@@ -54,7 +54,8 @@ function displayTable(){
   function bindInsert (){
 document.getElementById('newSubmit').addEventListener('click', function(event){
     var req = new XMLHttpRequest();
-    var payload = {name:null, reps:null, weight:null, date:null, lbs:null};
+//    var payload = {name:null, reps:null, weight:null, date:null, lbs:null};
+var payload={name:null};
     payload.name = document.getElementById('name').value;
     payload.reps = document.getElementById('reps').value;
     payload.weight = document.getElementById('weight').value;
