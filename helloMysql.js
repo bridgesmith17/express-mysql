@@ -63,7 +63,7 @@ app.post('/update-do',function(req,res, next){
           return;
         }
         });
-      res.render('home');
+      next();
     
       
     });
