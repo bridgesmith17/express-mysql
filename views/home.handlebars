@@ -43,10 +43,8 @@ function displayTable(){
                             newRow.appendChild(newCol);
                           ;
                             
-                            newForm = document.createElement("form");
-                            newCol.appendChild(newForm);
-                            newForm.method ="Post"
-                            newForm.innerHTML = "<input type="submit" name="delete" value="Delete">";
+
+                            newCol.innerHTML = "<form method="post"></form>";
                             
                             document.getElementById("body").appendChild(newRow);
                         }
