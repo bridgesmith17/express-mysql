@@ -168,7 +168,8 @@ document.getElementById('newSubmit').addEventListener('click', function(event){
         console.log("Error in network request: " + request.statusText);
       }});
     req.send(JSON.stringify(payload));
-    getNew();
+    displayTable();
+    document.getElementById("exercise-form").reset();
     event.preventDefault();
   });
 }
@@ -230,7 +231,7 @@ function getNew(){
 
 <h1>Add New Exercise</h1>
 
-<form method="post" name="exercise-form">
+<form method="post" name="exercise-form" id="exercis-form">
     <p>Name:</p>
     <p><input type="text" name="name" id="name"></p>
 
