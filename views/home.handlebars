@@ -54,9 +54,12 @@ function displayTable(){
   function bindInsert (){
 document.getElementById('newSubmit').addEventListener('click', function(event){
     var req = new XMLHttpRequest();
-    var payload = {name:null, reps:null};
+    var payload = {name:null, reps:null, weight:null, date:null, lbs:null};
     payload.name = document.getElementById('name').value;
     payload.reps = document.getElementById('reps').value;
+    payload.weight = document.getElementById('weight').value;
+    payload.date = document.getElementById('date').value;
+    payload.lbs = document.getElementById('lbs').value;
     req.open('POST', '/insert', true);
     req.setRequestHeader('Content-Type', 'application/json');
  
@@ -92,21 +95,27 @@ function getNew(){
                             newCol = document.createElement("td");
                             newRow.appendChild(newCol);
                             newCol.textContent = response.results[0].reps;
-  /*                          
-                            newCol = document.createElement("td");
-                            newRow.appendChild(newCol);
-                            newCol.textContent = response.results[p].weight;
                             
                             newCol = document.createElement("td");
                             newRow.appendChild(newCol);
-                            newCol.textContent = response.results[p].date;
+                            newCol.textContent = response.results[0].weight;
                             
                             newCol = document.createElement("td");
                             newRow.appendChild(newCol);
-                            newCol.textContent = response.results[p].lbs;
-    */                        
+                            newCol.textContent = response.results[0].date;
+                            
+                            newCol = document.createElement("td");
+                            newRow.appendChild(newCol);
+                            newCol.textContent = response.results[0].lbs;
+                            
                             document.getElementById("body").appendChild(newRow);
+                            
                             document.getElementById("name").value="";
+                            document.getElementById("reps").value="";
+                            document.getElementById("weight").value="";
+                            document.getElementById("name").value="";
+                            document.getElementById("name").value=1;
+                            
 
                     } else {
                            console.log("Error in network request: " + request.statusText);
