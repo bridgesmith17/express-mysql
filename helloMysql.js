@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 
-/*
+
 app.get('/select',function(req,res,next){
   /*
 if(req.body.name != null && req.body.name != "" && req.body.updateID == null)
@@ -26,11 +26,7 @@ if(req.body.name != null && req.body.name != "" && req.body.updateID == null)
     }
   });  
   } 
- 
- 
- 
-
-/*  
+ /*  
     mysql.pool.query("DELETE FROM workouts WHERE id=?", [req.body.deleteID], function(err, result){
     if(err){
       next(err);
@@ -64,7 +60,7 @@ if(req.body.name != null && req.body.name != "" && req.body.updateID == null)
       
     });
     
-/*    
+*/    
 
   var context = {};
   mysql.pool.query('SELECT * FROM workouts', function(err, rows, fields){
