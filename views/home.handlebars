@@ -1,24 +1,21 @@
 <script>
-                    
+document.addEventListener('DOMContentLoaded', displayTable);
 
+  function displayTable(){
                 var req = new XMLHttpRequest();
-              
                 req.open('GET', express-mysql/helloMysql.js, true);
-               
-              req.addEventListener('load',function(){
+                req.addEventListener('load',function(){
                     if(req.status >= 200 && req.status < 400){
                         var response = JSON.parse(req.responseText);
                         console.log(response);
-                        
                     } else {
                            console.log("Error in network request: " + request.statusText);
                     } 
-                  
                 });
                    req.send(null);
                    event.preventDefault();
          
-      
+  }
 </script>
 
 
