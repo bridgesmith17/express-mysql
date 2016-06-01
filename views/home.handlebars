@@ -22,6 +22,10 @@ document.addEventListener('DOMContentLoaded', bindInsert);
                             
                             newCol = document.createElement("td");
                             newRow.appendChild(newCol);
+                            newCol.textContent = response.results[p].id; 
+                            
+                            newCol = document.createElement("td");
+                            newRow.appendChild(newCol);
                             newCol.textContent = response.results[p].reps;
                             
                             newCol = document.createElement("td");
