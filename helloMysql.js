@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 
 
 
-app.all('/',function(req,res,next){
+app.get('/',function(req,res,next){
 /*  
 if(req.body.name != null && req.body.name != "" && req.body.updateID == null)
   {
@@ -38,14 +38,14 @@ if(req.body.name != null && req.body.name != "" && req.body.updateID == null)
     }
   
   });
-  */
+  
     mysql.pool.query("SELECT * FROM workouts WHERE id=?", [req.body.updateID], function(err, result){
     if(err){
       next(err);
       return;
     }
    
-    /*
+    
     if(result.length == 1){
  //     var curVals = result[0];
       mysql.pool.query("UPDATE workouts SET name=?, reps=?, weight=?, date=?, lbs=? WHERE id=? ",
