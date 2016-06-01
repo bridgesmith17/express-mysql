@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 
-
+/*
 app.get('/',function(req,res,next){
   /*
 if(req.body.name != null && req.body.name != "" && req.body.updateID == null)
@@ -61,7 +61,7 @@ if(req.body.name != null && req.body.name != "" && req.body.updateID == null)
       });
     }
     });
-    */
+    */ /*
       var context = {};
   mysql.pool.query('SELECT * FROM workouts', function(err, rows, fields){
     if(err){
@@ -74,7 +74,7 @@ if(req.body.name != null && req.body.name != "" && req.body.updateID == null)
        res.send( context);
  
   });
-
+*/
 /*  res.render('home'); */
 });
 
