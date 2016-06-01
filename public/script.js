@@ -50,7 +50,7 @@ function displayTable(){
                             if(response.results[p].lbs == 1){
                               newCol.textContent = "LBS";
                             } else {
-                              newCol.textConent = "KGS";
+                              newCol.textContent = "KGS";
                             }                           
                             newCol = document.createElement("td");
                        
