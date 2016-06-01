@@ -20,9 +20,6 @@ document.addEventListener('DOMContentLoaded', bindInsert);
                             newRow.appendChild(newCol);
                             newCol.textContent = response.results[p].name; 
                             
-                            newCol = document.createElement("td");
-                            newRow.appendChild(newCol);
-                            newCol.textContent = response.results[p].id; 
                             
                             newCol = document.createElement("td");
                             newRow.appendChild(newCol);
@@ -55,8 +52,9 @@ document.addEventListener('DOMContentLoaded', bindInsert);
   function bindInsert (){
 document.getElementById('newSubmit').addEventListener('click', function(event){
     var req = new XMLHttpRequest();
-    var payload = {name:null};
+    var payload = {name:null, reps:null};
     payload.name = document.getElementById('name').value;
+    payload.reps = document.getElementById('reps').value;
     req.open('POST', '/insert', true);
     req.setRequestHeader('Content-Type', 'application/json');
     req.addEventListener('load',function(){
