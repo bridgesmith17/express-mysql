@@ -25,6 +25,7 @@ app.post('/insert',function(req,res,next){
   });  
   
 }
+next();
 });
 
 app.get('/select',function(req,res,next){
