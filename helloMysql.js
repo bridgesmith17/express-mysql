@@ -23,6 +23,9 @@ app.post('/insert',function(req,res,next){
       return;
     }
   });
+  }
+  
+});
   
   /*
    var context = {};
@@ -40,9 +43,9 @@ app.post('/insert',function(req,res,next){
 });
 
 }
-*/
-});
 
+});
+*/
 app.get('/insert',function(req,res,next){
   /*
 if(req.body.name != null && req.body.name != "" && req.body.updateID == null)
