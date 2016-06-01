@@ -59,17 +59,16 @@ document.getElementById('newSubmit').addEventListener('click', function(event){
     req.setRequestHeader('Content-Type', 'application/json');
  
     req.addEventListener('load',function(){
-         console.log("thing 1");
       if(req.status >= 200 && req.status < 400){
-         console.log("thing 2");
-        /*
+        var response = JSON.parse(req.responseText);
+        
                             newRow = document.createElement("tr");
                             
                             
                             newCol = document.createElement("td");
                             newRow.appendChild(newCol);
-                            newCol.textContent = response.results[p].name; 
-                            
+                            newCol.textContent = "testing"; 
+        /*                    
                             newCol = document.createElement("td");
                             newRow.appendChild(newCol);
                             newCol.textContent = response.results[p].reps;
@@ -81,7 +80,6 @@ document.getElementById('newSubmit').addEventListener('click', function(event){
         console.log("Error in network request: " + request.statusText);
       }});
     req.send(JSON.stringify(payload));
-    displayTable();
     event.preventDefault();
   });
 }
