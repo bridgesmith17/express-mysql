@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', bindInsert);
   function bindInsert (){
 document.getElementById('newSubmit').addEventListener('click', function(event){
     var req = new XMLHttpRequest();
-    var payload = {name:null};
+    var payload = {name:null, reps:null};
     payload.name = document.getElementById('name').value;
     payload.reps = document.getElementById('reps').value;
     req.open('POST', '/insert', true);
