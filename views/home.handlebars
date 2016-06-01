@@ -19,3 +19,12 @@ document.addEventListener('DOMContentLoaded', displayTable);
                    event.preventDefault();
          
   }
+  </script>
+  
+  {{#each results}}
+	<tr>
+		<td>{{this.name}} </td>
+		<td>{{this.reps}} </td>
+		etc...
+	</tr>
+{{/each}}
