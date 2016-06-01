@@ -14,6 +14,10 @@ table{
   border-style:solid;
   
 }
+
+th{
+  border-style:solid;
+}
 tr{
   border-style:solid;
 }
