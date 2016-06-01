@@ -10,7 +10,9 @@ document.addEventListener('DOMContentLoaded', bindInsert);
 function displayTable(){
   var content = document.getElementById("body");
   if(content.hasChildNodes()){
-    console.log("existing table");
+    while(content.firstChild){
+      content.removeChild(content.firstChild);
+    }
   }
   
                var req = new XMLHttpRequest();
