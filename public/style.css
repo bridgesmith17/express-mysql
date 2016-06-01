@@ -6,12 +6,11 @@
 }
 
 .centered {
-/*  position: absolute; /* or absolute */
- /* top: 50%; */
+
   padding-left: 2cm;
 }
 
-table{
+thead{
   border-style:solid;
 }
 
