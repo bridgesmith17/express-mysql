@@ -3,7 +3,7 @@
 
 document.addEventListener('DOMContentLoaded', displayTable);
 document.addEventListener('DOMContentLoaded', bindInsert);
-document.addEventListener('DOMContentLoaded', bindDelete);
+
 function displayTable(){
 
                var req = new XMLHttpRequest();
@@ -55,6 +55,8 @@ function displayTable(){
                             newRow.appendChild(newCol);
                             
                             document.getElementById("body").appendChild(newRow);
+                            
+                            bindDelete();
                        
                        
                        
