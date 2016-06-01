@@ -42,9 +42,9 @@ function displayTable(){
                             
                             newCol = document.createElement("td");
                             
-                        
+                        newCol.innerHTML = '{{this.id}}''
                             
-
+/*
                             newCol.innerHTML = '<form method="post"><p><input type="hidden" name="deleteID" id = "deleteID" value="" ></p><p><input type="submit" name="delete" id="delete" value="Delete"></p></form>';
                             newRow.appendChild(newCol);
                             
@@ -53,7 +53,7 @@ function displayTable(){
                             document.getElementById('deleteID').value = response.results[p].id;
                     
                             bindDelete();
-                       
+     */                  
                        
                        
                         }
