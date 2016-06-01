@@ -57,9 +57,9 @@ function displayTable(){
                             
                             var deleteSubmit = document.createElement("input");
                             deleteSubmit.setAttribute("type","button");
-                            deleteSubmit.setAttribute("id",  "delete"'+response.results[p].id);
+                            deleteSubmit.setAttribute("id",  "delete"+response.results[p].id);
                             deleteSubmit.value = "Delete";
-                            deleteSubmit.setAttribute("oneclick", "deleteMe(this)");
+                            deleteSubmit.setAttribute("oneclick", "console.log(butt)");
                             
                             form.appendChild(deleteSubmit);
                           
