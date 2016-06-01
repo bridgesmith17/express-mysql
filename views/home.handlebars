@@ -10,12 +10,13 @@ document.addEventListener('DOMContentLoaded', displayTable);
                req.addEventListener('load',function(){
                     if(req.status >= 200 && req.status < 400){
                         var response = JSON.parse(req.responseText);
+                        
                         for(var p in response.results){
-                            data  += response.results[p].name; + ", "
+                            data  = response.results[p].name;
+                            newRow = document.createElement("tr");
+                            document.getElementById("body").appendChild(newRow);
+                            newRow.textContent = data; 
                         }
-                    newRow = document.createElement("tr");
-                    document.getElementById("body").appendChild(newRow);
-                  newRow.textContent = data;                        
                   console.log(response);
                     } else {
                            console.log("Error in network request: " + request.statusText);
