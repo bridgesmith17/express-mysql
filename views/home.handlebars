@@ -92,16 +92,13 @@ function displayTable(){
   
 function deleteMe(delButton){
   
-  console.log("progress");
-/*deleteSubmit.addEventListener('click', function(event){
-  console.log("made it here");
     var req = new XMLHttpRequest();
     var payload = {id:null};
 
-    payload.id = document.getElementById('hiddenId.id').value;
+    payload.id = delButton.previousElementSibling.value;
     
     console.log(payload.id);
-    req.open('POST', '/delete', true);
+  /*  req.open('POST', '/delete', true);
     req.setRequestHeader('Content-Type', 'application/json');
  
     req.addEventListener('load',function(){
