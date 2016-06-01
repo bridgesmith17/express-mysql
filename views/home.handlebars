@@ -106,7 +106,7 @@ function getNew(){
                             newCol.textContent = response.results[p].lbs;
     */                        
                             document.getElementById("body").appendChild(newRow);
-                            document.getElementById("newSubmit").reset();
+                            document.getElementById("name").value="";
 
                     } else {
                            console.log("Error in network request: " + request.statusText);
