@@ -14,9 +14,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 
-/*
+
 app.get('/',function(req,res,next){
-  /*
+  
 if(req.body.name != null && req.body.name != "" && req.body.updateID == null)
   {
     mysql.pool.query("INSERT INTO workouts (`name`,`reps`, `weight`, `date`, `lbs`) VALUES (?,?,?,?,?)", [req.body.name, req.body.reps, req.body.weight, req.body.date, req.body.lbs], function(err, result){
@@ -61,7 +61,9 @@ if(req.body.name != null && req.body.name != "" && req.body.updateID == null)
       });
     }
     });
-    */ /*
+    */ 
+    
+    if(req.body.name){
       var context = {};
   mysql.pool.query('SELECT * FROM workouts', function(err, rows, fields){
     if(err){
@@ -74,13 +76,12 @@ if(req.body.name != null && req.body.name != "" && req.body.updateID == null)
        res.send( context);
  
   });
-*/
-/*  res.render('home'); 
+  } else {
+  res.render('home'); 
+  }
 });
-*/
-app.get('/',function(req,res){
-  res.render('home');
-});
+
+
 
 /*
 app.post('/update',function(req,res,next){
