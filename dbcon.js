@@ -3,7 +3,7 @@ var pool = mysql.createPool({
   host  : 'localhost',
   user  : 'student',
   password: 'default',
-  database: 'student'
+  database: 'student',
   dateStrings: 'date'
 });
 module.exports.pool = pool;
